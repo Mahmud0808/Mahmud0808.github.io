@@ -6,7 +6,7 @@ export const heroSection: HeroSectionType = {
     title: 'Mahmudul Hasan Khan',
     tagline: 'I code Android apps and design websites.',
     description:
-    "I’m a Final Year Computer Science Engineering Student at DIU, Ashulia. Primarily interested in Android and Web Development.\n\nI enjoy learning new skills and implementing them in real life!",
+    "I’m a Final Year Computer Science Engineering Student at Daffodil International University. Primarily interested in Android and Web Development.\n\nI enjoy learning new skills and implementing them in real life!",
     specialText: 'Currently available for a job & freelance',
     cta: {
         title: 'see my resume',
