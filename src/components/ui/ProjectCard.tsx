@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react';
 import { motion, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import { prefix } from "../utils/prefix";
+import { prefix } from '@/lib/utils/config';
 
 const ProjectCard = ({
   name,

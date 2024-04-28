@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { prefix } from "../utils/prefix";
+import { prefix } from '@/lib/utils/config';
 
 type Props = { src: string; alt: string };
 
