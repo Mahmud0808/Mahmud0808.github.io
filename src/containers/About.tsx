@@ -3,7 +3,7 @@ import { aboutSection } from '@/lib/content/about';
 import { author } from '@/lib/content/portfolio';
 import { getId } from '@/lib/utils/helper';
 
-import { AuthorImage, Link, ListItem, Wrapper } from '@/components';
+import { AuthorImage, ListItem, Wrapper } from '@/components';
 
 import { getSectionAnimation } from '@/styles/animations';
 
