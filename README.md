@@ -1,20 +1,18 @@
 <h1 align="center">
-  mahmud0808.vercel.app
+  mahmud0808.github.io
 </h1>
 <p align="center">
-  A portfolio website i.e. <a href="https://mahmud0808.vercel.app" target="_blank">mahmud0808.vercel.app</a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>
+  A portfolio website i.e. <a href="https://mahmud0808.vercel.app" target="_blank">mahmud0808.vercel.app</a> built with <a href="https://nextjs.org/" target="_blank">Next.js</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a> <br> as well as <a href="https://mahmud0808.github.io" target="_blank">mahmud0808.github.io</a> hosted with <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>
 </p>
 
 <p align="center">
-  <a href="https://choosealicense.com/licenses/mit/">
-    <img src="https://img.shields.io/badge/License-MIT-brightgreen"/ >
-  </a>
-  <img src="https://img.shields.io/badge/Version-2.0.0-blue"/ >
+  <a href="https://choosealicense.com/licenses/mit/"><img src="https://img.shields.io/badge/License-MIT-brightgreen" /></a>
+  <img src="https://img.shields.io/badge/Version-2.0.0-blue" />
 </p>
 
 <br>
 
-[![My Portfolio](https://i.postimg.cc/nZDVRsDY/portfolio.png)](https://mahmud0808.vercel.app/)
+[![My Portfolio](https://i.postimg.cc/51nwvR8p/mahmudul-hasan-portfolio.png)](https://mahmud0808.vercel.app/)
 
 ## Table of Contents
 
