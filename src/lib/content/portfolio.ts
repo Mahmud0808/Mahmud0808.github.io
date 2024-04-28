@@ -35,7 +35,7 @@ export const seoData = {
     '@mahmudulhasankhan',
     'mahmudulhasankhan',
     'Portfolio',
-    'Mahmudul Portfolio ',
+    'Mahmudul Portfolio',
     'Mahmudul Hasan Portfolio',
     'Mahmudul Hasan Khan Portfolio',
     'DrDisagree',
