@@ -21,7 +21,7 @@ export const author = {
 
 export const seoData = {
   title: 'Mahmudul Hasan Khan | Portfolio',
-  description: 'Mahmudul Hasan is an Android and Web Developer who specializes in building static and dynamic applications.',
+  description: 'Passionate about Android and web development, focusing on creating innovative digital solutions.',
   author: author.name,
   image: 'https://i.postimg.cc/51nwvR8p/mahmudul-hasan-portfolio.png',
   url: 'https://mahmud0808.vercel.app',
