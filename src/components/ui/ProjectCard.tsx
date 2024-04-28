@@ -36,7 +36,7 @@ const ProjectCard = ({
       >
         <div className="overflow-hidden h-[200px]">
           <Image
-            src={`${prefix}/${img}`}
+            src={`${prefix}${img}`}
             alt={name}
             width={300}
             height={300}

@@ -39,7 +39,7 @@ const FeaturedProject = ({
         )}
       >
         <Image
-          src={`${prefix}/${img}`}
+          src={`${prefix}${img}`}
           alt={name}
           width={720}
           height={480}

@@ -7,7 +7,7 @@ const AuthorImage = ({ src, alt }: Props) => {
   return (
     <div className="relative w-64 h-64 group sm:w-auto sm:h-auto">
       <Image
-        src={`${prefix}/${src}`}
+        src={`${prefix}${src}`}
         alt={alt}
         width={300}
         height={300}
