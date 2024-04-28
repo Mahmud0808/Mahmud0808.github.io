@@ -1,7 +1,14 @@
-/** @type {import('next').NextConfig} */
-module.exports = {
+/**
+ * @type {import('next').NextConfig}
+**/
+
+const nextConfig = {
   reactStrictMode: true,
+  output: "export",
   images: {
+    loader: "akamai",
+    path: "",
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -25,4 +32,7 @@ module.exports = {
       },
     ],
   },
+  assetPrefix: "/",
 };
+
+export default nextConfig;

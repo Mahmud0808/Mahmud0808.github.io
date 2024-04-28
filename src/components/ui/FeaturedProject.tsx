@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 import { motion, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { prefix } from '@/lib/utils/config';
 
 interface Props extends FeaturedProjectType, MotionProps {
   align?: 'left' | 'right';
