@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 import { motion, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import { prefix } from "../utils/prefix";
 
 const ProjectCard = ({
   name,
@@ -35,7 +36,7 @@ const ProjectCard = ({
       >
         <div className="overflow-hidden h-[200px]">
           <Image
-            src={img}
+            src={`${prefix}/${img}`}
             alt={name}
             width={300}
             height={300}

@@ -6,6 +6,7 @@ import { Icon } from '@iconify/react';
 import { motion, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { prefix } from "../utils/prefix";
 
 interface Props extends FeaturedProjectType, MotionProps {
   align?: 'left' | 'right';
@@ -38,7 +39,7 @@ const FeaturedProject = ({
         )}
       >
         <Image
-          src={img}
+          src={`${prefix}/${img}`}
           alt={name}
           width={720}
           height={480}
