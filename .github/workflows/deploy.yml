@@ -38,7 +38,7 @@ jobs:
         with:
           ref: 'public'
       
-      - name: Create script.sh in public branch
+      - name: Create script.sh file
         run: |
           echo '#!/bin/bash' > script.sh
           echo 'echo "VERCEL_GIT_COMMIT_REF: $VERCEL_GIT_COMMIT_REF"' >> script.sh
@@ -49,3 +49,12 @@ jobs:
           echo '  echo "🛑 - Build cancelled"' >> script.sh
           echo '  exit 0' >> script.sh
           echo 'fi' >> script.sh
+      
+      - name: Commit script.sh file
+        if: ${{ success() }}
+        uses: EndBug/add-and-commit@v9
+        with:
+            add: "script.sh"
+            pull: "--rebase --autostash ."
+            message: "Create script.sh"
+            default_author: github_actions
