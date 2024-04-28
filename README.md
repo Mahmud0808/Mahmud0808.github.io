@@ -48,8 +48,6 @@
 
 1. Fork this repository and clone the project
 
-###### Please give me proper credit by linking back to [mahmud0808.vercel.app](https://mahmud0808.vercel.app).
-
 ```bash
   git clone https://github.com/<USERNAME>/<REPO NAME>.git
 ```
@@ -89,3 +87,5 @@
 ## Show Your Support
 
 Give a ⭐️ if you liked this project!
+
+Credit: [vatsalsinghkv.vercel.app](https://vatsalsinghkv.vercel.app)
