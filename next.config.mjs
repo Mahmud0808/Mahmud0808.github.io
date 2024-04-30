@@ -6,13 +6,21 @@ const nextConfig = {
   reactStrictMode: true,
   output: "export",
   images: {
-    path: "",
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**',
-        port: '',
-        pathname: '**',
+        hostname: 'user-images.githubusercontent.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.postimg.cc',
+        pathname: '/**',
       },
     ],
   },
