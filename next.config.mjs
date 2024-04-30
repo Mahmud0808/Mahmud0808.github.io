@@ -6,9 +6,7 @@ const nextConfig = {
   reactStrictMode: true,
   output: "export",
   images: {
-    loader: "akamai",
     path: "",
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
