@@ -2,6 +2,8 @@
  * @type {import('next').NextConfig}
 **/
 
+const isVercel = process.env.VERCEL_URL !== undefined;
+
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
@@ -25,5 +27,11 @@ const nextConfig = {
     ],
   },
 };
+
+if (!isVercel) {
+  nextConfig.images.loader = 'akamai';
+  nextConfig.images.path = '';
+  nextConfig.images.unoptimized = true;
+}
 
 export default nextConfig;
