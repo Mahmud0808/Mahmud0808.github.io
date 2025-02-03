@@ -6,6 +6,19 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'Truck Orbit',
+      url: 'https://github.com/Mahmud0808/TruckOrbit',
+      repo: 'https://github.com/Mahmud0808/TruckOrbit',
+      img: 'https://i.postimg.cc/MHr8wWPr/Truck-Orbit.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+        { name: 'Firebase', icon: 'vscode-icons:file-type-firebase' },
+        { name: 'Maps API', icon: 'logos:google-maps' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'Exam Timer',
       url: 'https://quiktimer.vercel.app',
       repo: 'https://github.com/Mahmud0808/ExamTimer',
@@ -159,8 +172,8 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'UniRide',
-      url: 'https://mahmud0808.github.io/MusicPlayer/',
-      repo: 'https://mahmud0808.github.io/MusicPlayer/',
+      url: 'https://github.com/Mahmud0808/UniRide',
+      repo: 'https://github.com/Mahmud0808/UniRide',
       img: 'https://i.postimg.cc/4GFBY02y/uniride.png',
       year: 2024,
       projectSkills: [
