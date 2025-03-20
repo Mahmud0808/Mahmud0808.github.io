@@ -8,7 +8,7 @@ export const experienceSection: ExperienceSectionType = {
       companyUrl: 'https://github.com/siavash79/PixelXpert',
       role: 'frontend developer',
       started: 'april 2023',
-      upto: 'present',
+      upto: 'january 2025',
       tasks: [
         "Implemented frontend UI following Google's Material Design 3 guidelines.",
         'Developed and maintained design systems that separates design logic.',
@@ -21,7 +21,7 @@ export const experienceSection: ExperienceSectionType = {
       companyUrl: 'https://play.google.com/store/apps/details?id=io.hifii.wiki',
       role: 'full-stack developer',
       started: 'october 2023',
-      upto: 'present',
+      upto: 'october 2024',
       tasks: [
         'Built encyclopedia application for the game War Thunder.',
         'URL fetching, data parsing, extraction, and manipulation using Jsoup.',
@@ -33,7 +33,7 @@ export const experienceSection: ExperienceSectionType = {
       companyUrl: 'https://github.com/SuperiorExtended',
       role: 'frontend developer',
       started: 'november 2023',
-      upto: 'january 2024',
+      upto: 'august 2024',
       tasks: [
         'Built dynamic frontend UI from the ground up using Java, Kotlin and XML.',
         'Architected the folder structure and initial setup of the fronted UI.',
