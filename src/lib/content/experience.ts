@@ -4,6 +4,18 @@ export const experienceSection: ExperienceSectionType = {
   title: 'experience',
   experiences: [
     {
+      company: 'Play.Partners',
+      companyUrl: 'https://linkedin.com/company/play-partners',
+      role: 'mobile app developer',
+      started: 'april 2025',
+      upto: 'present',
+      tasks: [
+        'Building exciting mobile games from scratch with Kotlin, Jetpack Compose, and ViewModels.',
+        'Integrating WebView with Firebase, Appsflyer, OneSignal, and Facebook SDK to boost functionality.',
+        'Improving code quality and user experience through continuous feedback and updates.',
+      ],
+    },
+    {
       company: 'PixelXpert',
       companyUrl: 'https://github.com/siavash79/PixelXpert',
       role: 'frontend developer',

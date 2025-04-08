@@ -1,9 +1,34 @@
 import { ProjectsSectionType } from '@/lib/types/sections';
 import { getId } from '@/lib/utils/helper';
 
+// https://icon-sets.iconify.design/vscode-icons/
+
 export const projectsSection: ProjectsSectionType = {
   title: 'other projects',
   projects: [
+    {
+      id: getId(),
+      name: 'Chicken Road Game',
+      url: 'https://drive.google.com/file/d/1rEoe6RwU_WINLsHTNAuiYmpxZlYzJcuj/view?usp=sharing',
+      repo: 'https://github.com/Mahmud0808/ChickenRoad',
+      img: 'https://i.postimg.cc/xTS0K9NM/chicken-road-banner.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+      ],
+    },
+    {
+      id: getId(),
+      name: 'PixelLauncher Enhanced',
+      url: 'https://github.com/Mahmud0808/PixelLauncherEnhanced',
+      repo: 'https://github.com/Mahmud0808/PixelLauncherEnhanced',
+      img: 'https://i.postimg.cc/cHmVwGpM/pixellauncher-enhanced-banner.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+        { name: 'XML', icon: 'vscode-icons:file-type-xml' },
+      ],
+    },
     {
       id: getId(),
       name: 'Truck Orbit',
