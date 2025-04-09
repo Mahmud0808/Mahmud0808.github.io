@@ -9,7 +9,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Chicken Road Game',
-      url: 'https://drive.google.com/file/d/1rEoe6RwU_WINLsHTNAuiYmpxZlYzJcuj/view?usp=sharing',
+      url: 'https://drive.google.com/drive/folders/1E3myxok1MQjIeYxiijvjtTHkg4dvzc7-?usp=sharing',
       repo: 'https://github.com/Mahmud0808/ChickenRoad',
       img: 'https://i.postimg.cc/xTS0K9NM/chicken-road-banner.png',
       year: 2025,
