@@ -8,6 +8,20 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'King Kong Card Game',
+      url: 'https://drive.google.com/drive/folders/1rv7VIJ0oX4PMY-ZeKzAYU6rvHg0Z76Xe?usp=sharing',
+      repo: 'https://github.com/Mahmud0808/KingKongCard',
+      img: 'https://i.postimg.cc/zGn76D38/kingkongcard-banner.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+        { name: 'Firebase', icon: 'vscode-icons:file-type-firebase' },
+        { name: 'OneSignal', icon: 'logos:onesignal' },
+        { name: 'Facebook SDK', icon: 'logos:facebook' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'Ryda',
       url: 'https://github.com/Mahmud0808/Ryda',
       repo: 'https://github.com/Mahmud0808/Ryda',
