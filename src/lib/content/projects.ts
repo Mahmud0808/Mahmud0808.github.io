@@ -8,6 +8,21 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'CareerPath+',
+      url: 'https://github.com/Mahmud0808/CareerPathPlus',
+      repo: 'https://github.com/Mahmud0808/CareerPathPlus',
+      img: 'https://i.postimg.cc/cLZ8hbpX/careerpathplus-banner.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Java', icon: 'hugeicons:java' },
+        { name: 'Spring Boot', icon: 'logos:spring-icon' },
+        { name: 'Firebase', icon: 'vscode-icons:file-type-firebase' },
+        { name: 'Neon Tech', icon: 'logos:neon-icon' },
+        { name: 'PostgreSQL', icon: 'logos:postgresql' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'Plinko Cosmos Game',
       url: 'https://github.com/Mahmud0808/PlinkoCosmos',
       repo: 'https://github.com/Mahmud0808/PlinkoCosmos',
@@ -74,6 +89,7 @@ export const projectsSection: ProjectsSectionType = {
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
         { name: 'XML', icon: 'vscode-icons:file-type-xml' },
+        { name: 'Xposed Framework', icon: 'arcticons:xposed' },
       ],
     },
     {
@@ -395,6 +411,7 @@ export const projectsSection: ProjectsSectionType = {
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
         { name: 'XML', icon: 'vscode-icons:file-type-xml' },
+        { name: 'Substratum', icon: 'arcticons:substratum' },
       ],
     },
     {
@@ -407,6 +424,7 @@ export const projectsSection: ProjectsSectionType = {
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
         { name: 'XML', icon: 'vscode-icons:file-type-xml' },
+        { name: 'Substratum', icon: 'arcticons:substratum' },
       ],
     },
     {
@@ -419,6 +437,7 @@ export const projectsSection: ProjectsSectionType = {
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
         { name: 'XML', icon: 'vscode-icons:file-type-xml' },
+        { name: 'Substratum', icon: 'arcticons:substratum' },
       ],
     },
     {
