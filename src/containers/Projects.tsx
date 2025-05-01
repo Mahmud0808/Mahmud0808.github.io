@@ -22,7 +22,7 @@ const Projects = () => {
       <motion.h2 className="heading-secondary text-center !mb-12">
         {title}
       </motion.h2>
-      <div className="grid gap-6 grid-cols-auto-250 xs:grid-cols-auto-300 place-items-center">
+      <div className="grid gap-6 grid-cols-auto-250 xs:grid-cols-auto-300 place-items-center h-full">
         {sortByYear(visibleProjects).map((project, i) => {
           if (i < PROJECTS_INITIALLY) {
             return (

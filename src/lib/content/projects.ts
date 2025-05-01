@@ -4,11 +4,12 @@ import { getId } from '@/lib/utils/helper';
 // https://icon-sets.iconify.design/vscode-icons/
 
 export const projectsSection: ProjectsSectionType = {
-  title: 'other projects',
+  title: 'Other Projects',
   projects: [
     {
       id: getId(),
       name: 'CareerPath+',
+      subtitle: 'Career Search and Planning Platform',
       url: 'https://github.com/Mahmud0808/CareerPathPlus',
       repo: 'https://github.com/Mahmud0808/CareerPathPlus',
       img: 'https://i.postimg.cc/cLZ8hbpX/careerpathplus-banner.png',
@@ -23,7 +24,8 @@ export const projectsSection: ProjectsSectionType = {
     },
     {
       id: getId(),
-      name: 'Plinko Cosmos Game',
+      name: 'Plinko Cosmos',
+      subtitle: 'Engaging Mobile Plinko Game',
       url: 'https://github.com/Mahmud0808/PlinkoCosmos',
       repo: 'https://github.com/Mahmud0808/PlinkoCosmos',
       img: 'https://i.postimg.cc/9CkcdFB7/plinkocosmos-banner.png',
@@ -37,7 +39,8 @@ export const projectsSection: ProjectsSectionType = {
     },
     {
       id: getId(),
-      name: 'King Kong Card Game',
+      name: 'King Kong Card',
+      subtitle: 'Interactive Card-Based Mobile Game',
       url: 'https://github.com/Mahmud0808/KingKongCard',
       repo: 'https://github.com/Mahmud0808/KingKongCard',
       img: 'https://i.postimg.cc/zGn76D38/kingkongcard-banner.png',
@@ -52,6 +55,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Ryda',
+      subtitle: 'Ride-Sharing Mobile Application',
       url: 'https://github.com/Mahmud0808/Ryda',
       repo: 'https://github.com/Mahmud0808/Ryda',
       img: 'https://i.postimg.cc/PqwjjvvL/ryda-banner.jpg',
@@ -67,7 +71,8 @@ export const projectsSection: ProjectsSectionType = {
     },
     {
       id: getId(),
-      name: 'Chicken Road Game',
+      name: 'Chicken Road',
+      subtitle: 'Fun Card-Matching Memory Game',
       url: 'https://github.com/Mahmud0808/ChickenRoad',
       repo: 'https://github.com/Mahmud0808/ChickenRoad',
       img: 'https://i.postimg.cc/xTS0K9NM/chicken-road-banner.png',
@@ -82,6 +87,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'PixelLauncher Enhanced',
+      subtitle: 'Android Launcher Customization',
       url: 'https://github.com/Mahmud0808/PixelLauncherEnhanced',
       repo: 'https://github.com/Mahmud0808/PixelLauncherEnhanced',
       img: 'https://i.postimg.cc/cHmVwGpM/pixellauncher-enhanced-banner.png',
@@ -95,6 +101,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Truck Orbit',
+      subtitle: 'Logistics Tracking Mobile App',
       url: 'https://github.com/Mahmud0808/TruckOrbit',
       repo: 'https://github.com/Mahmud0808/TruckOrbit',
       img: 'https://i.postimg.cc/MHr8wWPr/Truck-Orbit.png',
@@ -108,6 +115,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Exam Timer',
+      subtitle: 'Timed Exam Management Tool',
       url: 'https://quiktimer.vercel.app',
       repo: 'https://github.com/Mahmud0808/ExamTimer',
       img: 'https://i.postimg.cc/1Xtd7rQS/Exam-Timer.png',
@@ -120,6 +128,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Breakdown Assistance',
+      subtitle: 'Roadside Assistance Mobile App',
       url: 'https://github.com/Mahmud0808/BreakdownAssistance',
       repo: 'https://github.com/Mahmud0808/BreakdownAssistance',
       img: 'https://i.postimg.cc/3Jsq0QGT/Breakdown-Assistance.png',
@@ -133,6 +142,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'NexuTalk',
+      subtitle: 'Real-Time Chat Application',
       url: 'https://nexutalk.vercel.app/',
       repo: 'https://github.com/Mahmud0808/NexuTalk',
       img: 'https://i.postimg.cc/FhzMbpVC/Screen-Shot-Tool-20240804191942.png',
@@ -149,6 +159,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'MernAuth',
+      subtitle: 'Secure MERN Stack Authentication',
       url: 'https://mernauth-mwjp.onrender.com/',
       repo: 'https://github.com/Mahmud0808/MernAuth',
       img: 'https://i.postimg.cc/L9gTVFCs/MernAuth.png',
@@ -165,6 +176,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Melodify',
+      subtitle: 'Cross-Platform Music Player App',
       url: 'https://github.com/Mahmud0808/Melodify',
       repo: 'https://github.com/Mahmud0808/Melodify',
       img: 'https://i.postimg.cc/WbYQ7f55/Melodify.png',
@@ -178,6 +190,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'ResumeAI',
+      subtitle: 'AI-Powered Resume Builder',
       url: 'https://resume-ai-app.vercel.app/',
       repo: 'https://github.com/Mahmud0808/ResumeAI',
       img: 'https://i.postimg.cc/DnJHZ229/Resume-AI.png',
@@ -193,6 +206,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Quanta Bank',
+      subtitle: 'Secure Bank Account Management',
       url: 'https://github.com/Mahmud0808/QuantaBank',
       repo: 'https://github.com/Mahmud0808/QuantaBank',
       img: 'https://i.postimg.cc/66gtfQJP/quanta-bank.png',
@@ -208,6 +222,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Quirklr',
+      subtitle: 'Social Networking Web App',
       url: 'https://quirklrapp.vercel.app/',
       repo: 'https://github.com/Mahmud0808/Quirklr',
       img: 'https://i.postimg.cc/hSL5JvrB/quirklr.png',
@@ -222,6 +237,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Nexara Cart',
+      subtitle: 'E-Commerce Mobile Application',
       url: 'https://github.com/Mahmud0808/NexaraCart',
       repo: 'https://github.com/Mahmud0808/NexaraCart',
       img: 'https://i.postimg.cc/0ksn4Wjx/Nexara-Cart.png',
@@ -235,6 +251,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Lumi Weather',
+      subtitle: 'Weather Forecasting Mobile App',
       url: 'https://github.com/Mahmud0808/LumiWeather',
       repo: 'https://github.com/Mahmud0808/LumiWeather',
       img: 'https://i.postimg.cc/B4GHsLBZ/Lumi-Weather.png',
@@ -247,6 +264,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'TG Join Bot',
+      subtitle: 'Telegram Group Management Bot',
       url: 'https://github.com/Mahmud0808/TelegramJoinRequestVerifier',
       repo: 'https://github.com/Mahmud0808/TelegramJoinRequestVerifier',
       img: 'https://i.postimg.cc/hgntt96Y/TGJoin-Bot.png',
@@ -260,6 +278,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'UniRide',
+      subtitle: 'University Transport Management App',
       url: 'https://github.com/Mahmud0808/UniRide',
       repo: 'https://github.com/Mahmud0808/UniRide',
       img: 'https://i.postimg.cc/4GFBY02y/uniride.png',
@@ -274,6 +293,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Conversa',
+      subtitle: 'AI-Powered Chat Application',
       url: 'https://github.com/Mahmud0808/Conversa',
       repo: 'https://github.com/Mahmud0808/Conversa',
       img: 'https://i.postimg.cc/VsgKtc87/conversa.png',
@@ -286,6 +306,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Rushly',
+      subtitle: 'E-Commerce Mobile App',
       url: 'https://github.com/Mahmud0808/Rushly',
       repo: 'https://github.com/Mahmud0808/Rushly',
       img: 'https://i.postimg.cc/yN3mpw2z/rushly.webp',
@@ -298,6 +319,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'ThunderDex',
+      subtitle: 'War Thunder Information Hub',
       url: 'https://play.google.com/store/apps/details?id=io.hifii.wiki',
       repo: 'https://github.com/Mahmud0808/WarThunderWiki',
       img: 'https://i.postimg.cc/VvV21ysW-/opengraph-wt.jpg',
@@ -311,6 +333,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'RemiLab',
+      subtitle: 'System Preference Management Tool',
       url: 'https://github.com/Mahmud0808/RemiLab',
       repo: 'https://github.com/Mahmud0808/RemiLab',
       img: 'https://i.postimg.cc/Fs9sP3wr/remilab.png',
@@ -327,6 +350,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Sonix Spectrum',
+      subtitle: 'Kernel Optimization Tool',
       url: 'https://github.com/Mahmud0808/Sonix-Spectrum',
       repo: 'https://github.com/Mahmud0808/Sonix-Spectrum',
       img: 'https://i.postimg.cc/cCs23Vcf/sonixspectrum.jpg',
@@ -340,6 +364,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'SheGuard',
+      subtitle: 'Women’s Safety Mobile App',
       url: 'https://github.com/Mahmud0808/SheGuard',
       repo: 'https://github.com/Mahmud0808/SheGuard',
       img: 'https://i.postimg.cc/rVfKvhCd/sheguard.png',
@@ -352,8 +377,9 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'MusicPlayer',
+      subtitle: 'Web-Based Music Player',
       url: 'https://mahmud0808.github.io/MusicPlayer',
-      repo: 'https://github.com/Mahmud0808/MusicPlayer',
+      repo: 'https://github.com/Mahmud080Objectives: Create a web-based music player using HTML, CSS, and JavaScript. The project focuses on delivering a seamless audio playback experience with a clean and intuitive interface.',
       img: 'https://i.postimg.cc/D2TNDhgz/musicplayer.png',
       year: 2023,
       projectSkills: [
@@ -366,6 +392,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'QuizMania',
+      subtitle: 'Interactive Quiz Web App',
       url: 'https://mahmud0808.github.io/QuizMania',
       repo: 'https://github.com/Mahmud0808/QuizMania',
       img: 'https://i.postimg.cc/R404s70Y/quizmania.png',
@@ -379,6 +406,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'FRAS',
+      subtitle: 'Facial Recognition Attendance System',
       url: 'https://github.com/Mahmud0808/FRAS',
       repo: 'https://github.com/Mahmud0808/FRAS',
       img: 'https://i.postimg.cc/59phw2QG/fras.jpg',
@@ -392,6 +420,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Gadgets',
+      subtitle: 'Gadget Showcase Website',
       url: 'https://mahmud0808.github.io/Gadgets',
       repo: 'https://github.com/Mahmud0808/Gadgets',
       img: 'https://i.postimg.cc/MqWPSt2W/gadgets.png',
@@ -404,6 +433,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Another Theme',
+      subtitle: 'Android Theme Customization',
       url: 'https://www.pling.com/p/1732643',
       repo: 'https://github.com/Mahmud0808/AnotherTheme',
       img: 'https://i.postimg.cc/FN3T3qyg/heroimage.png',
@@ -417,6 +447,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Pink Bean (Monet)',
+      subtitle: 'Monet-Inspired Notification Icon Theme',
       url: 'https://www.pling.com/p/1732643',
       repo: 'https://github.com/Mahmud0808/PinkBeanMonet',
       img: 'https://i.postimg.cc/xngVLcyP/heroimage.png',
@@ -430,6 +461,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Pink Bean',
+      subtitle: 'Notification Icon Theme',
       url: 'https://www.pling.com/p/1732643',
       repo: 'https://github.com/Mahmud0808/PinkBean',
       img: 'https://i.postimg.cc/v8McjcKm/heroimage.png',
@@ -443,6 +475,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'Overlay Builder',
+      subtitle: 'Automated Theme Overlay Tool',
       url: 'https://github.com/Mahmud0808/OverlayBuilder',
       repo: 'https://github.com/Mahmud0808/OverlayBuilder',
       img: 'https://i.postimg.cc/DznZSzXZ/overlaybuilder.jpg',
@@ -455,6 +488,7 @@ export const projectsSection: ProjectsSectionType = {
     {
       id: getId(),
       name: 'To-Do List',
+      subtitle: 'Task Management Web App',
       url: 'https://github.com/Mahmud0808/ToDoList',
       repo: 'https://github.com/Mahmud0808/ToDoList',
       img: 'https://i.postimg.cc/BqfxBQCm/todolist.png',

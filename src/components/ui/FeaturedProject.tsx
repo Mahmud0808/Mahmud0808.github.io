@@ -99,7 +99,7 @@ const FeaturedProject = ({
           )}
         >
           {projectSkills.map(({ name }) => (
-            <span key={name.replaceAll(' ', '')}>{name}</span>
+            <span key={name.replaceAll(' ', '')}>{name.replaceAll(' ', '-')}</span>
           ))}
         </p>
 
