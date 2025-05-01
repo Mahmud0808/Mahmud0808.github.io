@@ -8,6 +8,50 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'Chicken Road 3',
+      subtitle: 'Fun Fast-Paced Egg Hunting Game',
+      url: 'https://github.com/Mahmud0808/ChickenRoad3',
+      repo: 'https://github.com/Mahmud0808/ChickenRoad3',
+      img: 'https://i.postimg.cc/MZ0C9976/chickenroad3.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+        { name: 'Firebase', icon: 'vscode-icons:file-type-firebase' },
+        { name: 'OneSignal', icon: 'logos:onesignal' },
+        { name: 'Facebook SDK', icon: 'logos:facebook' },
+      ],
+    },
+    {
+      id: getId(),
+      name: 'Mind Track',
+      subtitle: 'Production-Ready Task Tracker App',
+      url: 'https://github.com/Mahmud0808/MindTrack',
+      repo: 'https://github.com/Mahmud0808/MindTrack',
+      img: 'https://i.postimg.cc/F151FDKs/mindtrack.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+        { name: 'MySQL', icon: 'tabler:brand-mysql' },
+      ],
+    },
+    {
+      id: getId(),
+      name: 'LED Display',
+      subtitle: 'Digital Signage Controller System',
+      url: 'https://github.com/Mahmud0808/LEDDisplayController',
+      repo: 'https://github.com/Mahmud0808/LEDDisplayController',
+      img: 'https://i.postimg.cc/s2Sfnpfp/digital-signage.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Java', icon: 'hugeicons:java' },
+        { name: 'Rest API', icon: 'vscode-icons:file-type-rest' },
+        { name: 'OkHttp', icon: 'material-symbols:http' },
+        { name: 'JavaScript', icon: 'vscode-icons:file-type-js' },
+        { name: 'Node.js', icon: 'vscode-icons:file-type-node' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'CareerPath+',
       subtitle: 'Career Search and Planning Platform',
       url: 'https://github.com/Mahmud0808/CareerPathPlus',
@@ -28,7 +72,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Engaging Mobile Plinko Game',
       url: 'https://github.com/Mahmud0808/PlinkoCosmos',
       repo: 'https://github.com/Mahmud0808/PlinkoCosmos',
-      img: 'https://i.postimg.cc/9CkcdFB7/plinkocosmos-banner.png',
+      img: 'https://i.postimg.cc/258df8J9/plinkocosmos-banner.png',
       year: 2025,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -43,7 +87,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Interactive Card-Based Mobile Game',
       url: 'https://github.com/Mahmud0808/KingKongCard',
       repo: 'https://github.com/Mahmud0808/KingKongCard',
-      img: 'https://i.postimg.cc/zGn76D38/kingkongcard-banner.png',
+      img: 'https://i.postimg.cc/wjk5PsW-s/kingkongcard-banner.png',
       year: 2025,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -75,7 +119,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Fun Card-Matching Memory Game',
       url: 'https://github.com/Mahmud0808/ChickenRoad',
       repo: 'https://github.com/Mahmud0808/ChickenRoad',
-      img: 'https://i.postimg.cc/xTS0K9NM/chicken-road-banner.png',
+      img: 'https://i.postimg.cc/MpwbdYYS/chicken-road-banner.png',
       year: 2025,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
