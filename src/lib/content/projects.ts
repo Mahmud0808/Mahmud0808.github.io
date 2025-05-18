@@ -148,7 +148,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Logistics Tracking Mobile App',
       url: 'https://github.com/Mahmud0808/TruckOrbit',
       repo: 'https://github.com/Mahmud0808/TruckOrbit',
-      img: 'https://i.postimg.cc/MHr8wWPr/Truck-Orbit.png',
+      img: 'https://i.postimg.cc/tRMFT5NM/Truck-Orbit.png',
       year: 2025,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
