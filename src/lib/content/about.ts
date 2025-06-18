@@ -22,5 +22,5 @@ export const aboutSection: AboutSectionType = {
       'React',
     ],
   },
-  img: '/images/mahmudul-hasan.jpg',
+  img: '/images/mahmudul-hasan.webp',
 };
