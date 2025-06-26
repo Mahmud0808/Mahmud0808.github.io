@@ -1,12 +1,16 @@
 /**
  * @type {import('next').NextConfig}
-**/
+ **/
+
+import withBundleAnalyzer from '@next/bundle-analyzer';
 
 const isVercel = process.env.VERCEL_URL !== undefined;
+const isAnalyze = process.env.ANALYZE === 'true';
 
 const nextConfig = {
   reactStrictMode: true,
-  output: "export",
+  output: 'export',
+  swcMinify: true,
   images: {
     remotePatterns: [
       {
@@ -39,4 +43,6 @@ if (!isVercel) {
   nextConfig.images.unoptimized = true;
 }
 
-export default nextConfig;
+export default isAnalyze
+  ? withBundleAnalyzer({ enabled: true })(nextConfig)
+  : nextConfig;
