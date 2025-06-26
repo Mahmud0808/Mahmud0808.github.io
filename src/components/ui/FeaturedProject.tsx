@@ -33,24 +33,24 @@ const FeaturedProject = ({
       <div
         className={cn(
           'w-full lg:max-w-[60%] absolute inset-0 h-full -z-20 lg:z-0 lg:object-contain rounded-lg overflow-hidden shadow-2xl group',
-
           align === 'left' && 'ml-auto'
         )}
       >
-        <Image
-          src={img}
-          alt={name}
-          width={720}
-          height={480}
-          className="h-full w-full object-cover duration-200 group-hover:scale-105 transition-transform"
-          placeholder="blur"
-          blurDataURL={blurImageURL}
-        />
         <Link
           href={`${url}`}
           target="_blank"
           className="absolute inset-0 z-50 block bg-transparent"
-        />
+        >
+          <Image
+            src={img}
+            alt={name}
+            width={720}
+            height={480}
+            className="h-full w-full object-cover duration-200 group-hover:scale-105 transition-transform"
+            placeholder="blur"
+            blurDataURL={blurImageURL}
+          />
+        </Link>
       </div>
       <div
         className={cn(
@@ -99,7 +99,9 @@ const FeaturedProject = ({
           )}
         >
           {projectSkills.map(({ name }) => (
-            <span key={name.replaceAll(' ', '')}>{name.replaceAll(' ', '-')}</span>
+            <span key={name.replaceAll(' ', '')}>
+              {name.replaceAll(' ', '-')}
+            </span>
           ))}
         </p>
 

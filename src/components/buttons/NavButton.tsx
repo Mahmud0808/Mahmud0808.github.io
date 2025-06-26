@@ -1,17 +1,19 @@
 'use client';
 type Props = {
+  name: string;
   onClick: (event: React.MouseEvent) => void;
   className?: string;
   navbarCollapsed: boolean;
 };
 
-const NavButton = ({ onClick, className, navbarCollapsed }: Props) => {
+const NavButton = ({ name, onClick, className, navbarCollapsed }: Props) => {
   const classes = `bg-accent h-0.5 duration-200 ${
     navbarCollapsed ? 'absolute' : ''
   }`;
 
   return (
     <button
+      aria-label={name}
       className={`${className} w-7 h-7 group transition focus:outline-none`}
       onClick={onClick}
     >

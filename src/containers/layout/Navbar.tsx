@@ -141,6 +141,7 @@ const Navbar = () => {
       </h1>
 
       <NavButton
+        name="Toggle Navigation"
         onClick={() => {
           setNavbarCollapsed((prev) => !prev);
         }}

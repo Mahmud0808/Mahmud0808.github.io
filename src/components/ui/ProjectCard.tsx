@@ -53,10 +53,12 @@ const ProjectCard = ({
         </div>
         <div className="px-4 py-3 space-y-1 rounded-b-md flex flex-col flex-grow">
           <>
-            <h4 className="flex justify-between font-medium capitalize">
-              <span className="text-slate-800 dark:text-slate-200">{name}</span>
+            <div className="flex justify-between font-medium capitalize">
+              <span className="text-slate-800 dark:text-slate-200 duration-200 group-hover:text-accent">
+                {name}
+              </span>
               <span className="mr-1">{year}</span>
-            </h4>
+            </div>
             <p className="text-start text-sm">{subtitle}</p>
             <div className="font-mono text-xs capitalize pt-2">
               <div
