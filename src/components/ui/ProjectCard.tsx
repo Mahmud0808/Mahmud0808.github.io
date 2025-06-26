@@ -58,7 +58,7 @@ const ProjectCard = ({
               <span className="mr-1">{year}</span>
             </h4>
             <p className="text-start text-sm">{subtitle}</p>
-            <p className="font-mono text-xs capitalize pt-2">
+            <div className="font-mono text-xs capitalize pt-2">
               <div
                 key={getId()}
                 className="flex flex-wrap justify-items-start gap-2"
@@ -67,7 +67,7 @@ const ProjectCard = ({
                   <ProjectSkillIcon key={getId()} src={icon} name={name} />
                 ))}
               </div>
-            </p>
+            </div>
           </>
           <div className="flex space-x-4 pt-4 mt-auto">
             <a
