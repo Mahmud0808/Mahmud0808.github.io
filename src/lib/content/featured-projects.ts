@@ -1,15 +1,14 @@
 import { FeaturedProjectsSectionType } from '@/lib/types/sections';
-import { getId } from '@/lib/utils/helper';
 
 const featuredProjectsSection: FeaturedProjectsSectionType = {
   title: "projects i've worked on",
   projects: [
     {
-      id: getId(),
+      id: 'iconify',
       name: 'Iconify',
-      subtitle: 'Android Theme Customization',
       description: 'Open-source Android theming application.',
-      tasks: 'Iconify lets you customize your Android 12+ device easily. Change icons, colors, shapes, and even the notification panel for a personalized look that suits your style.',
+      tasks:
+        'Iconify lets you customize your Android 12+ device easily. Change icons, colors, shapes, and even the notification panel for a personalized look that suits your style.',
       url: 'https://github.com/Mahmud0808/Iconify',
       img: 'https://i.postimg.cc/26L2PSLR/iconify.png',
       projectSkills: [
@@ -20,11 +19,11 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
       ],
     },
     {
-      id: getId(),
+      id: 'colorblendr',
       name: 'ColorBlendr',
-      subtitle: 'Material You Color Customizer',
       description: 'Customize Material You colors of your device.',
-      tasks: 'An application for customizing Material You colors on devices with Android 12+. It lets you tweak accent colors, background saturation, and more for a personalized look.',
+      tasks:
+        'An application for customizing Material You colors on devices with Android 12+. It lets you tweak accent colors, background saturation, and more for a personalized look.',
       url: 'https://github.com/Mahmud0808/ColorBlendr',
       img: 'https://i.postimg.cc/9fnL87MY/colorblendr.png',
       projectSkills: [
