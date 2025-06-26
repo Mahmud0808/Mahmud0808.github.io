@@ -22,11 +22,11 @@ interface ButtonProps extends DefaultProps {
 
 type Props =
   | ({
-    type?: 'button';
-  } & ButtonProps)
+      type?: 'button';
+    } & ButtonProps)
   | ({
-    type: 'link';
-  } & LinkProps);
+      type: 'link';
+    } & LinkProps);
 
 // For separating animation props from button props
 const buttonProps: Array<keyof Props | keyof LinkProps> = [
@@ -47,11 +47,36 @@ const Button = (props: Props & MotionProps) => {
     center = false,
   } = props;
 
-  const classes = `${size === 'sm' ? 'p-2 px-4 text-sm border-[1.5px] ' : 'text-sm p-4 px-6 border-2'} block ${center ? 'mx-auto' : ''} w-fit font-mono capitalize rounded-full border-accent text-accent bg-bg hover:bg-accent-light focus:outline-none focus:bg-accent-light duration-0 cursor-pointer ${className}`;
+  const classes = `${
+    size === 'sm'
+      ? 'p-2 px-4 text-sm border-[1.5px] '
+      : 'text-sm p-4 px-6 border-2'
+  } block ${
+    center ? 'mx-auto' : ''
+  } w-fit font-mono capitalize rounded-full border-accent text-accent bg-bg hover:bg-accent-light focus:outline-none focus:bg-accent-light duration-0 cursor-pointer ${className}`;
 
   if (props.type === 'link') {
     const { sameTab, ...motionProps } = props;
     removeKeys<Props & LinkProps>(motionProps, buttonProps);
+
+    const isStaticFile = props.href.match(
+      /\.(pdf|docx?|txt|csv|zip|png|jpe?g|webp|svg|mp4|mp3)$/i
+    );
+
+    if (isStaticFile) {
+      return (
+        <motion.span {...motionProps}>
+          <a
+            href={props.href}
+            className={classes}
+            target={sameTab ? '_self' : '_blank'}
+            rel="noopener noreferrer"
+          >
+            {children}
+          </a>
+        </motion.span>
+      );
+    }
 
     return (
       <motion.span {...motionProps}>
