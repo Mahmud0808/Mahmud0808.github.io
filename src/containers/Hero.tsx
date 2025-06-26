@@ -321,14 +321,15 @@ const Hero = () => {
               height={530}
               className="absolute -top-96 -right-72 opacity-80 dark:opacity-100 pointer-events-none"
             />
-            <Image
-              alt=""
-              priority
-              src="/images/glassify/blur-indigo.png"
-              width={567}
-              height={567}
-              className="absolute -bottom-8 -right-52 opacity-80 dark:opacity-100 pointer-events-none"
-            />
+            <div className="absolute -bottom-8 -right-52 w-[567px] h-[567px] opacity-80 dark:opacity-100 pointer-events-none">
+              <Image
+                alt=""
+                priority
+                src="/images/glassify/blur-indigo.png"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </motion.div>

@@ -12,9 +12,7 @@ const AuthorImage = ({ src, alt }: Props) => {
         alt={alt}
         width={300}
         height={300}
-        objectFit="cover"
-        objectPosition="center"
-        className="rounded-xl shadow-xl drop-shadow-corner pointer-events-none"
+        className="rounded-xl shadow-xl drop-shadow-corner pointer-events-none object-cover object-center"
       />
       <div className="absolute inset-0 border-[3px] z-[-1] rounded-xl border-accent translate-x-6 translate-y-6 group-hover:translate-x-4 group-hover:translate-y-4 duration-150 hidden sm:block"></div>
     </div>

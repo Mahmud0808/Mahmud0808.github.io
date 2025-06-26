@@ -41,15 +41,14 @@ const ProjectCard = ({
         }}
         className="flex flex-col h-full w-full rounded-md shadow-xl bg-bg-secondary dark:shadow-2xl group"
       >
-        <div className="overflow-hidden h-[200px] rounded-t-md">
+        <div className="overflow-hidden relative w-full h-[200px] rounded-t-md">
           <Image
+            fill
             src={`${prefix}${img}`}
             alt={name}
-            width={300}
-            height={200}
             placeholder="blur"
             blurDataURL={blurImageURL}
-            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-105 group-focus:scale-105"
+            className="object-cover transition-transform duration-300 group-hover:scale-105 group-focus:scale-105"
           />
         </div>
         <div className="px-4 py-3 space-y-1 rounded-b-md flex flex-col flex-grow">
