@@ -23,6 +23,7 @@ const DarkModeButton = ({
   return (
     <motion.button
       className={`rounded-lg p-1 hover:text-accent focus:text-accent focus:outline-none focus:bg-bg-secondary cursor-pointer w-fit ${className} duration-200`}
+      aria-label={isDarkMode ? 'Light mode' : 'Dark mode'}
       onClick={clickHandler}
       {...rest}
     >

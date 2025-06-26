@@ -6,6 +6,7 @@ export type NavLinkType = {
 export type SocialLinkType = {
   icon: string;
   url: string;
+  name: string;
 };
 
 export type CTAType = {
