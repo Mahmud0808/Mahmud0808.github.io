@@ -37,14 +37,12 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.05 }}
         >
-          <Image
-            alt=""
-            priority
-            src="/images/glassify/blur-cyan.png"
-            width={530}
-            height={530}
-            className="absolute bottom-full right-full -mr-48 lg:-mr-72 -m-64 opacity-50 pointer-events-none"
-          />
+          <div
+            className="absolute bottom-full right-full -mr-48 lg:-mr-72 -m-64 w-[530px] h-[530px] opacity-50 pointer-events-none bg-cover bg-no-repeat"
+            style={{
+              backgroundImage: 'url(/images/glassify/blur-cyan.png)',
+            }}
+          ></div>
         </motion.div>
         <div className="flex flex-col gap-6 xs:gap-5 mt-5">
           <div className="max-w-4xl font-bold tracking-tighter text-3xl md:text-5xl lg:text-7xl">
@@ -313,23 +311,18 @@ const Hero = () => {
             </svg>
           </div>
           <div className="relative">
-            <Image
-              alt=""
-              priority
-              src="/images/glassify/blur-cyan.png"
-              width={530}
-              height={530}
-              className="absolute -top-96 -right-72 opacity-80 dark:opacity-100 pointer-events-none"
-            />
-            <div className="absolute -bottom-8 -right-52 w-[567px] h-[567px] opacity-80 dark:opacity-100 pointer-events-none">
-              <Image
-                alt=""
-                priority
-                src="/images/glassify/blur-indigo.png"
-                fill
-                className="object-cover"
-              />
-            </div>
+            <div
+              className="absolute -top-96 -right-72 w-[530px] h-[530px] opacity-80 dark:opacity-100 pointer-events-none bg-cover bg-no-repeat"
+              style={{
+                backgroundImage: 'url(/images/glassify/blur-cyan.png)',
+              }}
+            ></div>
+            <div
+              className="absolute -bottom-8 -right-52 w-[567px] h-[567px] opacity-80 dark:opacity-100 pointer-events-none bg-cover bg-no-repeat"
+              style={{
+                backgroundImage: 'url(/images/glassify/blur-indigo.png)',
+              }}
+            ></div>
           </div>
         </div>
       </motion.div>
