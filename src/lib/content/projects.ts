@@ -8,6 +8,21 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'Family Arbore',
+      subtitle: 'Social Media Platform For Families',
+      url: 'https://github.com/Mahmud0808/FamilyArbore',
+      repo: 'https://github.com/Mahmud0808/FamilyArbore',
+      img: 'https://i.postimg.cc/4nkKgKzY/familyarbore.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Flutter', icon: 'vscode-icons:file-type-flutter' },
+        { name: 'Dart', icon: 'vscode-icons:file-type-dartlang' },
+        { name: 'Rest API', icon: 'vscode-icons:file-type-rest' },
+        { name: 'WebSocket', icon: 'icon-park:round-socket' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'Mind Track',
       subtitle: 'Production-Ready Task Tracker App',
       url: 'https://github.com/Mahmud0808/MindTrack',
@@ -74,7 +89,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Android Launcher Customization',
       url: 'https://github.com/Mahmud0808/PixelLauncherEnhanced',
       repo: 'https://github.com/Mahmud0808/PixelLauncherEnhanced',
-      img: 'https://i.postimg.cc/cHmVwGpM/pixellauncher-enhanced-banner.png',
+      img: 'https://i.postimg.cc/SxgRxt4L/PLEnhanced.png',
       year: 2025,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
