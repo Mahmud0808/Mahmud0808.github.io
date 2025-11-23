@@ -8,6 +8,21 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'Lammah',
+      subtitle: 'Discover, create, and join local events',
+      url: 'https://github.com/Mahmud0808/Lammah',
+      repo: 'https://github.com/Mahmud0808/Lammah',
+      img: 'https://i.postimg.cc/Y0wNqk9P/lammah.png',
+      year: 2025,
+      projectSkills: [
+        { name: 'Flutter', icon: 'vscode-icons:file-type-flutter' },
+        { name: 'Dart', icon: 'vscode-icons:file-type-dartlang' },
+        { name: 'Rest API', icon: 'vscode-icons:file-type-rest' },
+        { name: 'Firebase', icon: 'vscode-icons:file-type-firebase' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'Family Arbore',
       subtitle: 'Social Media Platform For Families',
       url: 'https://github.com/Mahmud0808/FamilyArbore',
