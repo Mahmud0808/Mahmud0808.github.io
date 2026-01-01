@@ -4,9 +4,9 @@ import { resumeFileName } from '@/lib/utils/config';
 export const heroSection: HeroSectionType = {
   subtitle: 'Hello, I’m',
   title: 'Mahmudul Hasan Khan',
-  tagline: ['Android Developer', 'Web Developer', 'Full Stack Developer'],
+  tagline: ['Mobile App Developer', 'Web Developer', 'Full Stack Developer'],
   description:
-    'I’m a Computer Science & Engineering graduate from Daffodil International University, with a focus on Android and Web Development. I enjoy learning new skills and building interactive apps. I’m eager to grow and collaborate with others to turn ideas into reality.',
+    'I’m a Computer Science & Engineering graduate from Daffodil International University, with a focus on Mobile App and Web Development. I enjoy learning new skills and building interactive apps. I’m eager to grow and collaborate with others to turn ideas into reality.',
   specialText:
     'Currently available for job opportunities and freelance projects.',
   ctas: [

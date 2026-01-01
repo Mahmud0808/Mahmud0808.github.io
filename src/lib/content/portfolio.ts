@@ -22,7 +22,7 @@ export const author = {
 export const seoData = {
   title: 'Mahmudul Hasan Khan | Portfolio',
   description:
-    'Passionate about Android and web development, focusing on creating innovative digital solutions.',
+    'Passionate about mobile app and web development, focusing on creating innovative digital solutions.',
   author: author.name,
   image: 'https://i.postimg.cc/25zdR8ny/Mahmudul-Hasan-Khan-Portfolio.png',
   url: 'https://mahmud0808.github.io',
@@ -57,6 +57,7 @@ export const seoData = {
     'Tech Enthusiast',
     'Innovative Developer',
     'Digital Solutions Developer',
+    'Multiplatform Developer',
     'Cross Platform Developer',
     'Compose Multiplatform Developer',
   ],

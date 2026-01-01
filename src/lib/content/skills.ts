@@ -12,7 +12,7 @@ export const skillsSection: SkillsSectionType = {
         dark: '/lotties/frontend-dark.json',
       },
       points: [
-        'Building static and dynamic Android applications.',
+        'Building static and dynamic mobile applications.',
         'Developing responsive and scalable web solutions.',
         'Creating interactive, modern, and visually appealing user interfaces.',
       ],
@@ -27,7 +27,10 @@ export const skillsSection: SkillsSectionType = {
         { name: 'Next.js', icon: 'vscode-icons:file-type-next' },
         { name: 'React', icon: 'logos:react' },
         { name: 'Node.js', icon: 'logos:nodejs-icon' },
-        { name: 'TypeScript', icon: 'vscode-icons:file-type-typescript-official' },
+        {
+          name: 'TypeScript',
+          icon: 'vscode-icons:file-type-typescript-official',
+        },
         { name: 'JavaScript', icon: 'vscode-icons:file-type-js-official' },
         { name: 'Tailwind CSS', icon: 'vscode-icons:file-type-tailwind' },
         { name: 'Shell Script', icon: 'vscode-icons:file-type-shell' },
