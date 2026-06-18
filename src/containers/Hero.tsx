@@ -8,8 +8,7 @@ import { Button, Wrapper } from '@/components';
 import { slideUp } from '@/styles/animations';
 
 import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
-import { HERO_TITLE_DELAY } from '@/lib/utils/config';
+import CyclingText from '@/components/ui/CyclingText';
 import Image from 'next/image';
 
 const Hero = () => {
@@ -22,8 +21,6 @@ const Hero = () => {
 
   const getAnimationDelay = (i: number, increment = 0.15) =>
     DEFAULT_ANIMATION_DELAY + increment * i;
-
-  const taglineSequence = tagline.flatMap((str) => [str, HERO_TITLE_DELAY]);
 
   return (
     <Wrapper
@@ -68,17 +65,9 @@ const Hero = () => {
               animate="show"
               className="leading-[1.2] mb-2 max-sm:mb-1"
             >
-              <TypeAnimation
-                sequence={taglineSequence}
-                speed={50}
-                cursor={false}
-                repeat={Infinity}
-                className="type"
-                style={{
-                  color: 'inherit',
-                  fontWeight: 'bold',
-                  display: 'inline-block',
-                }}
+              <CyclingText
+                items={tagline}
+                startDelay={(getAnimationDelay(2) + 1.6) * 1000}
               />
             </motion.h1>
           </div>
