@@ -1,5 +1,12 @@
 'use client';
-import { Player } from '@lottiefiles/react-lottie-player';
+import dynamic from 'next/dynamic';
+
+// Loaded client-side only: the player touches `document` at import time,
+// which breaks static prerendering (no DOM on the server).
+const Player = dynamic(
+  () => import('@lottiefiles/react-lottie-player').then((m) => m.Player),
+  { ssr: false }
+);
 
 type Props = {
   path: any;

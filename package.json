@@ -12,18 +12,16 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "-": "^0.0.1",
     "@lottiefiles/react-lottie-player": "^3.5.0",
     "@tailwindcss/line-clamp": "^0.4.4",
     "clsx": "^2.0.0",
     "framer-motion": "^9.0.3",
     "husky": "^8.0.3",
     "lint-staged": "^15.2.10",
-    "next": "^16.2.6",
+    "next": "^16.2.9",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-type-animation": "^3.2.0",
-    "save-dev": "^0.0.1-security",
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.0.0",
     "yarn": "^1.22.22"
@@ -48,7 +46,7 @@
     "postcss": "^8.5.10",
     "prettier": "^2.8.3",
     "tailwindcss": "^3.2.1",
-    "typescript": "4.8.4"
+    "typescript": "^5.4.5"
   },
   "lint-staged": {
     "*.{js,jsx}": "eslint --fix",

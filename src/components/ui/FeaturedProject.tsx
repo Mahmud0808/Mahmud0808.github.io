@@ -1,5 +1,5 @@
 import { FeaturedProjectType } from '@/lib/types';
-import { blurImageURL } from '@/lib/utils/config';
+import { blurImageURL, prefix } from '@/lib/utils/config';
 import { cn } from '@/lib/utils/helper';
 
 import { Icon } from '@iconify/react';
@@ -42,7 +42,7 @@ const FeaturedProject = ({
           className="absolute inset-0 z-50 block bg-transparent"
         >
           <Image
-            src={img}
+            src={`${prefix}${img}`}
             alt={name}
             width={720}
             height={480}

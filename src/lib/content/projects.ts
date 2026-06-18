@@ -8,11 +8,25 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'Appwise',
+      subtitle: 'Track Unused Apps and Subscriptions',
+      url: 'https://play.google.com/store/apps/details?id=com.drdisagree.appwise',
+      repo: 'https://play.google.com/store/apps/details?id=com.drdisagree.appwise',
+      img: '/images/projects/appwise.webp',
+      year: 2026,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+        { name: 'Jetpack Compose', icon: 'devicon:jetpackcompose' },
+        { name: 'Google Playstore', icon: 'mage:playstore' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'Lammah',
-      subtitle: 'Discover, create, and join local events',
+      subtitle: 'Discover, Create, and Join Local Events',
       url: 'https://github.com/Mahmud0808/Lammah',
       repo: 'https://github.com/Mahmud0808/Lammah',
-      img: 'https://i.postimg.cc/Y0wNqk9P/lammah.png',
+      img: '/images/projects/lammah.webp',
       year: 2025,
       projectSkills: [
         { name: 'Flutter', icon: 'vscode-icons:file-type-flutter' },
@@ -27,7 +41,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Social Media Platform For Families',
       url: 'https://github.com/Mahmud0808/FamilyArbore',
       repo: 'https://github.com/Mahmud0808/FamilyArbore',
-      img: 'https://i.postimg.cc/4nkKgKzY/familyarbore.png',
+      img: '/images/projects/family-arbore.webp',
       year: 2025,
       projectSkills: [
         { name: 'Flutter', icon: 'vscode-icons:file-type-flutter' },
@@ -42,7 +56,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Production-Ready Task Tracker App',
       url: 'https://github.com/Mahmud0808/MindTrack',
       repo: 'https://github.com/Mahmud0808/MindTrack',
-      img: 'https://i.postimg.cc/F151FDKs/mindtrack.png',
+      img: '/images/projects/mind-track.webp',
       year: 2025,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -55,7 +69,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Digital Signage Controller System',
       url: 'https://github.com/Mahmud0808/LEDDisplayController',
       repo: 'https://github.com/Mahmud0808/LEDDisplayController',
-      img: 'https://i.postimg.cc/s2Sfnpfp/digital-signage.png',
+      img: '/images/projects/digital-signage.webp',
       year: 2025,
       projectSkills: [
         { name: 'Java', icon: 'hugeicons:java' },
@@ -71,7 +85,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Career Search and Planning Platform',
       url: 'https://github.com/Mahmud0808/CareerPathPlus',
       repo: 'https://github.com/Mahmud0808/CareerPathPlus',
-      img: 'https://i.postimg.cc/cLZ8hbpX/careerpathplus-banner.png',
+      img: '/images/projects/career-path-plus.webp',
       year: 2025,
       projectSkills: [
         { name: 'Java', icon: 'hugeicons:java' },
@@ -87,7 +101,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Ride-Sharing Mobile Application',
       url: 'https://github.com/Mahmud0808/Ryda',
       repo: 'https://github.com/Mahmud0808/Ryda',
-      img: 'https://i.postimg.cc/PqwjjvvL/ryda-banner.jpg',
+      img: '/images/projects/ryda.webp',
       year: 2025,
       projectSkills: [
         { name: 'React Native', icon: 'vscode-icons:file-type-reactjs' },
@@ -104,7 +118,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Android Launcher Customization',
       url: 'https://github.com/Mahmud0808/PixelLauncherEnhanced',
       repo: 'https://github.com/Mahmud0808/PixelLauncherEnhanced',
-      img: 'https://i.postimg.cc/SxgRxt4L/PLEnhanced.png',
+      img: '/images/projects/plenhanced.webp',
       year: 2025,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -118,7 +132,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Logistics Tracking Mobile App',
       url: 'https://github.com/Mahmud0808/TruckOrbit',
       repo: 'https://github.com/Mahmud0808/TruckOrbit',
-      img: 'https://i.postimg.cc/tRMFT5NM/Truck-Orbit.png',
+      img: '/images/projects/truck-orbit.webp',
       year: 2025,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -132,7 +146,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Timed Exam Management Tool',
       url: 'https://quiktimer.vercel.app',
       repo: 'https://github.com/Mahmud0808/ExamTimer',
-      img: 'https://i.postimg.cc/1Xtd7rQS/Exam-Timer.png',
+      img: '/images/projects/exam-timer.webp',
       year: 2024,
       projectSkills: [
         { name: 'Next.js', icon: 'file-icons:nextjs' },
@@ -145,7 +159,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Roadside Assistance Mobile App',
       url: 'https://github.com/Mahmud0808/BreakdownAssistance',
       repo: 'https://github.com/Mahmud0808/BreakdownAssistance',
-      img: 'https://i.postimg.cc/3Jsq0QGT/Breakdown-Assistance.png',
+      img: '/images/projects/breakdown-assistance.webp',
       year: 2024,
       projectSkills: [
         { name: 'Java', icon: 'hugeicons:java' },
@@ -159,7 +173,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Real-Time Chat Application',
       url: 'https://nexutalk.vercel.app/',
       repo: 'https://github.com/Mahmud0808/NexuTalk',
-      img: 'https://i.postimg.cc/FhzMbpVC/Screen-Shot-Tool-20240804191942.png',
+      img: '/images/projects/nexutalk.webp',
       year: 2024,
       projectSkills: [
         { name: 'Next.js', icon: 'file-icons:nextjs' },
@@ -176,7 +190,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Secure MERN Stack Authentication',
       url: 'https://mernauth-mwjp.onrender.com/',
       repo: 'https://github.com/Mahmud0808/MernAuth',
-      img: 'https://i.postimg.cc/L9gTVFCs/MernAuth.png',
+      img: '/images/projects/mern-auth.webp',
       year: 2024,
       projectSkills: [
         { name: 'MongoDB', icon: 'vscode-icons:file-type-mongo' },
@@ -193,7 +207,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Cross-Platform Music Player App',
       url: 'https://github.com/Mahmud0808/Melodify',
       repo: 'https://github.com/Mahmud0808/Melodify',
-      img: 'https://i.postimg.cc/WbYQ7f55/Melodify.png',
+      img: '/images/projects/melodify.webp',
       year: 2024,
       projectSkills: [
         { name: 'Flutter', icon: 'vscode-icons:file-type-flutter' },
@@ -207,7 +221,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'AI-Powered Resume Builder',
       url: 'https://resume-ai-app.vercel.app/',
       repo: 'https://github.com/Mahmud0808/ResumeAI',
-      img: 'https://i.postimg.cc/DnJHZ229/Resume-AI.png',
+      img: '/images/projects/resume-ai.webp',
       year: 2024,
       projectSkills: [
         { name: 'Next.js', icon: 'file-icons:nextjs' },
@@ -223,7 +237,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Secure Bank Account Management',
       url: 'https://github.com/Mahmud0808/QuantaBank',
       repo: 'https://github.com/Mahmud0808/QuantaBank',
-      img: 'https://i.postimg.cc/66gtfQJP/quanta-bank.png',
+      img: '/images/projects/quanta-bank.webp',
       year: 2024,
       projectSkills: [
         { name: 'Next.js', icon: 'file-icons:nextjs' },
@@ -239,7 +253,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Social Networking Web App',
       url: 'https://quirklrapp.vercel.app/',
       repo: 'https://github.com/Mahmud0808/Quirklr',
-      img: 'https://i.postimg.cc/hSL5JvrB/quirklr.png',
+      img: '/images/projects/quirklr.webp',
       year: 2024,
       projectSkills: [
         { name: 'Next.js', icon: 'file-icons:nextjs' },
@@ -254,7 +268,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'E-Commerce Mobile Application',
       url: 'https://github.com/Mahmud0808/NexaraCart',
       repo: 'https://github.com/Mahmud0808/NexaraCart',
-      img: 'https://i.postimg.cc/0ksn4Wjx/Nexara-Cart.png',
+      img: '/images/projects/nexara-cart.webp',
       year: 2024,
       projectSkills: [
         { name: 'Flutter', icon: 'vscode-icons:file-type-flutter' },
@@ -268,7 +282,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Weather Forecasting Mobile App',
       url: 'https://github.com/Mahmud0808/LumiWeather',
       repo: 'https://github.com/Mahmud0808/LumiWeather',
-      img: 'https://i.postimg.cc/B4GHsLBZ/Lumi-Weather.png',
+      img: '/images/projects/lumi-weather.webp',
       year: 2024,
       projectSkills: [
         { name: 'Flutter', icon: 'vscode-icons:file-type-flutter' },
@@ -281,7 +295,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Telegram Group Management Bot',
       url: 'https://github.com/Mahmud0808/TelegramJoinRequestVerifier',
       repo: 'https://github.com/Mahmud0808/TelegramJoinRequestVerifier',
-      img: 'https://i.postimg.cc/hgntt96Y/TGJoin-Bot.png',
+      img: '/images/projects/tg-join-bot.webp',
       year: 2024,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -295,7 +309,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'University Transport Management App',
       url: 'https://github.com/Mahmud0808/UniRide',
       repo: 'https://github.com/Mahmud0808/UniRide',
-      img: 'https://i.postimg.cc/4GFBY02y/uniride.png',
+      img: '/images/projects/uniride.webp',
       year: 2024,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -310,7 +324,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'AI-Powered Chat Application',
       url: 'https://github.com/Mahmud0808/Conversa',
       repo: 'https://github.com/Mahmud0808/Conversa',
-      img: 'https://i.postimg.cc/VsgKtc87/conversa.png',
+      img: '/images/projects/conversa.webp',
       year: 2024,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -323,7 +337,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'E-Commerce Mobile App',
       url: 'https://github.com/Mahmud0808/Rushly',
       repo: 'https://github.com/Mahmud0808/Rushly',
-      img: 'https://i.postimg.cc/yN3mpw2z/rushly.webp',
+      img: '/images/projects/rushly.webp',
       year: 2024,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -336,7 +350,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'War Thunder Information Hub',
       url: 'https://play.google.com/store/apps/details?id=io.hifii.wiki',
       repo: 'https://github.com/Mahmud0808/WarThunderWiki',
-      img: 'https://i.postimg.cc/VvV21ysW-/opengraph-wt.jpg',
+      img: '/images/projects/war-thunder-wiki.webp',
       year: 2024,
       projectSkills: [
         { name: 'Java', icon: 'hugeicons:java' },
@@ -350,7 +364,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'System Preference Management Tool',
       url: 'https://github.com/Mahmud0808/RemiLab',
       repo: 'https://github.com/Mahmud0808/RemiLab',
-      img: 'https://i.postimg.cc/Fs9sP3wr/remilab.png',
+      img: '/images/projects/remilab.webp',
       year: 2024,
       projectSkills: [
         { name: 'Java', icon: 'hugeicons:java' },
@@ -367,7 +381,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Kernel Optimization Tool',
       url: 'https://github.com/Mahmud0808/Sonix-Spectrum',
       repo: 'https://github.com/Mahmud0808/Sonix-Spectrum',
-      img: 'https://i.postimg.cc/cCs23Vcf/sonixspectrum.jpg',
+      img: '/images/projects/sonix-spectrum.webp',
       year: 2024,
       projectSkills: [
         { name: 'Java', icon: 'hugeicons:java' },
@@ -381,7 +395,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Women’s Safety Mobile App',
       url: 'https://github.com/Mahmud0808/SheGuard',
       repo: 'https://github.com/Mahmud0808/SheGuard',
-      img: 'https://i.postimg.cc/rVfKvhCd/sheguard.png',
+      img: '/images/projects/sheguard.webp',
       year: 2023,
       projectSkills: [
         { name: 'Java', icon: 'hugeicons:java' },
@@ -394,7 +408,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Web-Based Music Player',
       url: 'https://mahmud0808.github.io/MusicPlayer',
       repo: 'https://github.com/Mahmud080Objectives: Create a web-based music player using HTML, CSS, and JavaScript. The project focuses on delivering a seamless audio playback experience with a clean and intuitive interface.',
-      img: 'https://i.postimg.cc/D2TNDhgz/musicplayer.png',
+      img: '/images/projects/music-player.webp',
       year: 2023,
       projectSkills: [
         { name: 'HTML', icon: 'vscode-icons:file-type-html' },
@@ -409,7 +423,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Interactive Quiz Web App',
       url: 'https://mahmud0808.github.io/QuizMania',
       repo: 'https://github.com/Mahmud0808/QuizMania',
-      img: 'https://i.postimg.cc/R404s70Y/quizmania.png',
+      img: '/images/projects/quiz-mania.webp',
       year: 2023,
       projectSkills: [
         { name: 'HTML', icon: 'vscode-icons:file-type-html' },
@@ -423,7 +437,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Facial Recognition Attendance System',
       url: 'https://github.com/Mahmud0808/FRAS',
       repo: 'https://github.com/Mahmud0808/FRAS',
-      img: 'https://i.postimg.cc/59phw2QG/fras.jpg',
+      img: '/images/projects/fras.webp',
       year: 2022,
       projectSkills: [
         { name: 'Python', icon: 'vscode-icons:file-type-python' },
@@ -437,7 +451,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Gadget Showcase Website',
       url: 'https://mahmud0808.github.io/Gadgets',
       repo: 'https://github.com/Mahmud0808/Gadgets',
-      img: 'https://i.postimg.cc/MqWPSt2W/gadgets.png',
+      img: '/images/projects/gadgets.webp',
       year: 2022,
       projectSkills: [
         { name: 'HTML', icon: 'vscode-icons:file-type-html' },
@@ -450,7 +464,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Android Theme Customization',
       url: 'https://www.pling.com/p/1732643',
       repo: 'https://github.com/Mahmud0808/AnotherTheme',
-      img: 'https://i.postimg.cc/FN3T3qyg/heroimage.png',
+      img: '/images/projects/another-theme.webp',
       year: 2022,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -464,7 +478,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Monet-Inspired Notification Icon Theme',
       url: 'https://www.pling.com/p/1732643',
       repo: 'https://github.com/Mahmud0808/PinkBeanMonet',
-      img: 'https://i.postimg.cc/xngVLcyP/heroimage.png',
+      img: '/images/projects/pink-bean-monet.webp',
       year: 2022,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -478,7 +492,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Notification Icon Theme',
       url: 'https://www.pling.com/p/1732643',
       repo: 'https://github.com/Mahmud0808/PinkBean',
-      img: 'https://i.postimg.cc/v8McjcKm/heroimage.png',
+      img: '/images/projects/pink-bean.webp',
       year: 2022,
       projectSkills: [
         { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
@@ -492,7 +506,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Automated Theme Overlay Tool',
       url: 'https://github.com/Mahmud0808/OverlayBuilder',
       repo: 'https://github.com/Mahmud0808/OverlayBuilder',
-      img: 'https://i.postimg.cc/DznZSzXZ/overlaybuilder.jpg',
+      img: '/images/projects/overlay-builder.webp',
       year: 2021,
       projectSkills: [
         { name: 'GitHub Actions', icon: 'fa-brands:github' },
@@ -505,7 +519,7 @@ export const projectsSection: ProjectsSectionType = {
       subtitle: 'Task Management Web App',
       url: 'https://github.com/Mahmud0808/ToDoList',
       repo: 'https://github.com/Mahmud0808/ToDoList',
-      img: 'https://i.postimg.cc/BqfxBQCm/todolist.png',
+      img: '/images/projects/todo-list.webp',
       year: 2021,
       projectSkills: [
         { name: 'HTML', icon: 'vscode-icons:file-type-html' },
