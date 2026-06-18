@@ -19,6 +19,8 @@ type Props = {
   startDelay?: number;
   /** Direction the stagger propagates. */
   staggerDirection?: StaggerDirection;
+  /** Play the entrance reveal on mount. When false, renders shown (no blur-in). */
+  animateIn?: boolean;
   className?: string;
 };
 
@@ -43,6 +45,7 @@ const StaggeredText = ({
   duration = 0.6,
   startDelay = 0,
   staggerDirection = 'forward',
+  animateIn = true,
   className = '',
 }: Props) => {
   const segments = useMemo(
@@ -81,7 +84,7 @@ const StaggeredText = ({
     <motion.span
       className={className}
       style={{ display: 'inline-block', whiteSpace: 'pre-wrap' }}
-      initial="hidden"
+      initial={animateIn ? 'hidden' : false}
       animate="show"
       exit="exit"
       aria-label={text}

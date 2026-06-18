@@ -1,6 +1,6 @@
 'use client';
 import { AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import StaggeredText from './StaggeredText';
 
 type Props = {
@@ -15,8 +15,10 @@ type Props = {
 /**
  * Cycles through `items`, revealing each with a staggered blur animation.
  * Self-contained state so the parent does not re-render on every swap.
- * Until `startDelay` elapses (i.e. the hero reveal finishes) the first item
- * is shown statically, then the staggered animation kicks in.
+ *
+ * The first item is shown statically (no entrance) until `startDelay`
+ * elapses, then it blurs out and the cycle begins — so the very first
+ * tagline also gets the vanish animation.
  */
 const CyclingText = ({
   items,
@@ -24,32 +26,27 @@ const CyclingText = ({
   startDelay = 0,
   className = '',
 }: Props) => {
-  const [started, setStarted] = useState(false);
   const [index, setIndex] = useState(0);
+  // Only the first paint skips the entrance reveal; every later mount animates.
+  const animatedOnce = useRef(false);
 
-  // Hold the first item static until the hero reveal is done.
   useEffect(() => {
-    const id = setTimeout(() => setStarted(true), startDelay);
-    return () => clearTimeout(id);
-  }, [startDelay]);
+    if (items.length <= 1) return;
+    let intervalId: ReturnType<typeof setInterval>;
+    const advance = () => {
+      animatedOnce.current = true;
+      setIndex((i) => (i + 1) % items.length);
+    };
+    const startId = setTimeout(() => {
+      advance(); // first swap once the hero reveal is done
+      intervalId = setInterval(advance, interval);
+    }, startDelay);
 
-  // Start cycling only after the animation has begun.
-  useEffect(() => {
-    if (!started || items.length <= 1) return;
-    const id = setInterval(
-      () => setIndex((i) => (i + 1) % items.length),
-      interval
-    );
-    return () => clearInterval(id);
-  }, [started, items.length, interval]);
-
-  if (!started) {
-    return (
-      <span className={className} style={{ display: 'inline-block' }}>
-        {items[0]}
-      </span>
-    );
-  }
+    return () => {
+      clearTimeout(startId);
+      clearInterval(intervalId);
+    };
+  }, [items.length, interval, startDelay]);
 
   return (
     <AnimatePresence mode="wait">
@@ -60,6 +57,7 @@ const CyclingText = ({
         blur
         delay={40}
         duration={0.4}
+        animateIn={animatedOnce.current}
         className={className}
       />
     </AnimatePresence>
