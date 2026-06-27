@@ -101,9 +101,9 @@ export const slideUp = ({
 // * For sections
 
 export const sectionVariants = slideUp({
-  delay: 0.5,
-  duration: 1.75,
-  offset: 50,
+  delay: 0.15,
+  duration: 0.65,
+  offset: 30,
 });
 
 export const getSectionAnimation = {
