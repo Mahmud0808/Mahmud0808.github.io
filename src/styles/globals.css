@@ -45,6 +45,14 @@
     scrollbar-width: thin;
     scrollbar-color: var(--color-accent) var(--color-bg-secondary);
   }
+
+  @media (min-width: 1024px) {
+    *,
+    *::before,
+    *::after {
+      cursor: none !important;
+    }
+  }
 }
 
 ::view-transition-old(root),
