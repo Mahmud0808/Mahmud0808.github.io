@@ -7,9 +7,11 @@ import {
   useState,
 } from 'react';
 
+type Coords = { x: number; y: number };
+
 const initialState = {
   isDarkMode: false,
-  toggle: () => {
+  toggle: (_coords?: Coords) => {
     return;
   },
   enableDarkMode: (_: boolean) => {
@@ -34,9 +36,38 @@ export default function ThemeProvider({
       : false
   );
 
-  const toggle = useCallback(() => {
-    setIsDarkMode((prev) => !prev);
+  const applyTheme = useCallback((dark: boolean) => {
+    localStorage.setItem('darkMode', JSON.stringify(dark));
+    if (dark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
   }, []);
+
+  const toggle = useCallback(
+    (coords?: Coords) => {
+      const next = !isDarkMode;
+      const prefersReducedMotion = window.matchMedia(
+        '(prefers-reduced-motion: reduce)'
+      ).matches;
+
+      if (!document.startViewTransition || prefersReducedMotion) {
+        setIsDarkMode(next);
+        return;
+      }
+
+      if (coords) {
+        document.documentElement.style.setProperty('--vt-x', `${coords.x}px`);
+        document.documentElement.style.setProperty('--vt-y', `${coords.y}px`);
+      }
+
+      document.startViewTransition(() => {
+        setIsDarkMode(next);
+      });
+    },
+    [isDarkMode]
+  );
 
   const enableDarkMode = useCallback(() => {
     setIsDarkMode(true);
@@ -47,13 +78,8 @@ export default function ThemeProvider({
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('darkMode', JSON.stringify(isDarkMode));
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
+    applyTheme(isDarkMode);
+  }, [isDarkMode, applyTheme]);
 
   return (
     <ThemeContext.Provider

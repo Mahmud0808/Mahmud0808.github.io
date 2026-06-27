@@ -17,7 +17,7 @@ const DarkModeButton = ({
 
   const clickHandler = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     onClick && onClick(e);
-    toggle();
+    toggle({ x: e.clientX, y: e.clientY });
   };
 
   return (

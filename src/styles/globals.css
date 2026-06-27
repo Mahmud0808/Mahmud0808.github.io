@@ -47,6 +47,30 @@
   }
 }
 
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 0;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+  animation: vt-reveal 0.4s ease-in-out forwards;
+}
+
+@keyframes vt-reveal {
+  from {
+    clip-path: circle(0% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+  to {
+    clip-path: circle(150% at var(--vt-x, 50%) var(--vt-y, 50%));
+  }
+}
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

@@ -182,7 +182,7 @@ const Navbar = () => {
                 </Button>
               )}
               <DarkModeButton
-                onClick={() => setNavbarCollapsed(false)}
+                onClick={() => {}}
                 variants={slideIn({
                   delay: ANIMATION_DELAY + (navLinks.length + 1) / 10,
                   direction: 'down',
