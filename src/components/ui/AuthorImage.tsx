@@ -21,6 +21,7 @@ const AuthorImage = ({ src, alt }: Props) => {
           alt={alt}
           width={300}
           height={300}
+          priority
           className="rounded-xl shadow-xl drop-shadow-corner pointer-events-none object-cover object-center border-4 border-solid border-[var(--color-accent)/60]"
         />
       </ElectricBorder>

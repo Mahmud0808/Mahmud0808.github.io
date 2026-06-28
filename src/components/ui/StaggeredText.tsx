@@ -1,5 +1,5 @@
 'use client';
-import { motion, Variants } from 'framer-motion';
+import { m, Variants } from 'framer-motion';
 import { useMemo } from 'react';
 
 type SegmentBy = 'chars' | 'words' | 'lines';
@@ -81,7 +81,8 @@ const StaggeredText = ({
   };
 
   return (
-    <motion.span
+    <m.span
+      role="group"
       className={className}
       style={{ display: 'inline-block', whiteSpace: 'pre-wrap' }}
       initial={animateIn ? 'hidden' : false}
@@ -93,7 +94,7 @@ const StaggeredText = ({
         const steps = offsetSteps(i, segments.length, staggerDirection);
         const content = seg === ' ' || seg === '' ? ' ' : seg;
         return (
-          <motion.span
+          <m.span
             key={`${i}-${seg}`}
             custom={steps}
             variants={item}
@@ -105,10 +106,10 @@ const StaggeredText = ({
           >
             {content}
             {segmentBy === 'words' && i < segments.length - 1 ? ' ' : ''}
-          </motion.span>
+          </m.span>
         );
       })}
-    </motion.span>
+    </m.span>
   );
 };
 

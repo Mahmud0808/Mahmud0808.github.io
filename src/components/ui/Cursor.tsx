@@ -1,5 +1,5 @@
 'use client';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { m, useMotionValue, useSpring } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 type Props = {
@@ -48,7 +48,7 @@ const Cursor = ({ className = '' }: Props) => {
   return (
     <div className={className}>
       {/* Ambient spotlight */}
-      <motion.div
+      <m.div
         className="fixed w-full h-[140%] z-10 pointer-events-none bg-torch"
         style={{
           left: mouseX,
@@ -59,7 +59,7 @@ const Cursor = ({ className = '' }: Props) => {
       />
 
       {/* Ring with spring lag */}
-      <motion.div
+      <m.div
         className="fixed rounded-full pointer-events-none z-[9999]"
         style={{
           left: ringX,
@@ -78,7 +78,7 @@ const Cursor = ({ className = '' }: Props) => {
       />
 
       {/* Precise dot */}
-      <motion.div
+      <m.div
         className="fixed rounded-full pointer-events-none z-[9999] bg-accent"
         style={{
           left: mouseX,

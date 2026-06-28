@@ -8,7 +8,7 @@ import { Button, DarkModeButton, Link as CLink, NavButton } from '@/components';
 
 import { fadeIn, slideIn } from '@/styles/animations';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 
@@ -53,7 +53,7 @@ type NavItemsProps = {
 
 const NavItem = ({ href, children, onClick, index, delay }: NavItemsProps) => {
   return (
-    <motion.li
+    <m.li
       className="group"
       variants={slideIn({ delay: delay + index / 10, direction: 'down' })}
       initial="hidden"
@@ -67,7 +67,7 @@ const NavItem = ({ href, children, onClick, index, delay }: NavItemsProps) => {
       >
         {children}
       </CLink>
-    </motion.li>
+    </m.li>
   );
 };
 
@@ -119,7 +119,7 @@ const Navbar = () => {
   }, [navbarCollapsed, windowWidth]);
 
   return (
-    <motion.header
+    <m.header
       variants={fadeIn(0.5)}
       initial="hidden"
       animate="show"
@@ -164,7 +164,7 @@ const Navbar = () => {
               </NavItem>
             ))}
 
-            <div className="flex items-center justify-between gap-5 xl:gap-6">
+            <li className="flex items-center justify-between gap-5 xl:gap-6">
               {cta && (
                 <Button
                   type="link"
@@ -190,11 +190,11 @@ const Navbar = () => {
                 initial="hidden"
                 animate="show"
               />
-            </div>
+            </li>
           </ul>
         </nav>
       )}
-    </motion.header>
+    </m.header>
   );
 };
 

@@ -9,6 +9,9 @@ const isAnalyze = process.env.ANALYZE === 'true';
 
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    optimizePackageImports: ['framer-motion', '@iconify/react'],
+  },
   images: {
     remotePatterns: [
       {

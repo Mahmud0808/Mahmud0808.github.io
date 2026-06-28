@@ -3,7 +3,7 @@ import { blurImageURL } from '@/lib/utils/config';
 import { cn } from '@/lib/utils/helper';
 
 import { Icon } from '@iconify/react';
-import { motion, MotionProps } from 'framer-motion';
+import { m, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -23,7 +23,7 @@ const FeaturedProject = ({
   ...rest
 }: Props) => {
   return (
-    <motion.div
+    <m.div
       className={cn(
         'relative min-h-[220px] sm:min-h-[360px] h-full overflow-hidden lg:overflow-visible rounded-lg lg:rounded-xl shadow-lg lg:shadow-none text-center lg:text-right !z-40',
         align === 'left' && 'lg:text-left'
@@ -129,7 +129,7 @@ const FeaturedProject = ({
           </div>
         )}
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

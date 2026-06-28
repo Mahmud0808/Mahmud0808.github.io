@@ -1,7 +1,7 @@
 'use client';
 import { removeKeys } from '@/lib/utils/helper';
 
-import { motion, MotionProps } from 'framer-motion';
+import { m, MotionProps } from 'framer-motion';
 import Link from 'next/link';
 
 interface DefaultProps {
@@ -65,7 +65,7 @@ const Button = (props: Props & MotionProps) => {
 
     if (isStaticFile) {
       return (
-        <motion.span {...motionProps}>
+        <m.span {...motionProps}>
           <a
             href={props.href}
             className={classes}
@@ -74,12 +74,12 @@ const Button = (props: Props & MotionProps) => {
           >
             {children}
           </a>
-        </motion.span>
+        </m.span>
       );
     }
 
     return (
-      <motion.span {...motionProps}>
+      <m.span {...motionProps}>
         <Link
           className={classes}
           href={props.href}
@@ -88,7 +88,7 @@ const Button = (props: Props & MotionProps) => {
         >
           {children}
         </Link>
-      </motion.span>
+      </m.span>
     );
   }
 

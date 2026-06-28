@@ -3,18 +3,18 @@ import { TabList } from '@/components';
 
 import { experienceSection } from '../lib/content/experience';
 import { getSectionAnimation } from '../styles/animations';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 const Experience = () => {
   return (
-    <motion.section
+    <m.section
       id="experience"
       className="max-w-3xl py-32 mx-auto"
       {...getSectionAnimation}
     >
       <h2 className="heading-secondary">{experienceSection.title}</h2>
       <TabList experiences={experienceSection.experiences} />
-    </motion.section>
+    </m.section>
   );
 };
 

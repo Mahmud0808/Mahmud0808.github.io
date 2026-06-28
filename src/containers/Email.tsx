@@ -7,6 +7,7 @@ const Email = () => {
     <Sidebar side="right">
       <SocialLink
         href={`mailto:${author.email}`}
+        name={author.email}
         className="[writing-mode:vertical-lr] font-mono tracking-widest text-xs"
       >
         {author.email}

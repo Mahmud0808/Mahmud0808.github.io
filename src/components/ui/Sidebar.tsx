@@ -1,7 +1,7 @@
 'use client';
 import { fadeIn } from '@/styles/animations';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import React from 'react';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
 
 const Sidebar = ({ children, className = '', side = 'left' }: Props) => {
   return (
-    <motion.div
+    <m.div
       variants={fadeIn(2.75)}
       initial="hidden"
       animate="show"
@@ -22,7 +22,7 @@ const Sidebar = ({ children, className = '', side = 'left' }: Props) => {
     >
       {children}
       <div className="bg-slate-500 h-24 w-0.5 mt-5"></div>
-    </motion.div>
+    </m.div>
   );
 };
 
