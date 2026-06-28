@@ -4,7 +4,7 @@ import { blurImageURL, prefix } from '@/lib/utils/config';
 import { getId } from '@/lib/utils/helper';
 
 import { Icon } from '@iconify/react';
-import { motion, MotionProps } from 'framer-motion';
+import { m, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import ProjectSkillIcon from '../projects/ProjectSkillIcon';
@@ -28,7 +28,7 @@ const ProjectCard = ({
   }, []);
 
   return domLoaded ? (
-    <motion.div
+    <m.div
       {...rest}
       className="w-full max-w-[350px] !z-40 flex flex-col h-full"
       id={id}
@@ -91,7 +91,7 @@ const ProjectCard = ({
           </div>
         </div>
       </button>
-    </motion.div>
+    </m.div>
   ) : (
     <></>
   );

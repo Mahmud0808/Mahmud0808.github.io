@@ -7,9 +7,8 @@ import { Button, Wrapper } from '@/components';
 
 import { slideUp } from '@/styles/animations';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import CyclingText from '@/components/ui/CyclingText';
-import Image from 'next/image';
 
 const Hero = () => {
   const { ctas, subtitle, title, tagline, description, specialText } =
@@ -28,38 +27,40 @@ const Hero = () => {
       className="flex flex-col justify-center h-full min-h-screen gap-6 xs:gap-5"
     >
       <div className="relative col-span-2 z-10">
-        <motion.div
+        <m.div
           exit={{ opacity: 0 }}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.05 }}
         >
           <div
-            className="absolute bottom-full right-full -mr-48 lg:-mr-72 -m-64 w-[530px] h-[530px] opacity-50 pointer-events-none bg-cover bg-no-repeat"
+            className="absolute bottom-full right-full -mr-48 lg:-mr-72 -m-64 w-[530px] h-[530px] opacity-50 pointer-events-none"
             style={{
-              backgroundImage: 'url(/images/glassify/blur-cyan.png)',
+              background:
+                'radial-gradient(circle, rgba(20,170,230,0.33) 0%, transparent 55%)',
+              filter: 'blur(30px)',
             }}
           ></div>
-        </motion.div>
+        </m.div>
         <div className="flex flex-col gap-6 xs:gap-5 mt-5">
           <div className="max-w-4xl font-bold tracking-tighter text-3xl md:text-5xl lg:text-7xl">
-            <motion.p
+            <m.p
               variants={slideUp({ delay: getAnimationDelay(0) })}
               initial="hidden"
               animate="show"
               className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent-variant inline-block leading-[1.2]"
             >
               {subtitle}
-            </motion.p>
-            <motion.h1
+            </m.p>
+            <m.h1
               variants={slideUp({ delay: getAnimationDelay(1) })}
               initial="hidden"
               animate="show"
               className="text-slate-900 dark:text-slate-200 leading-[1.1]"
             >
               {title}
-            </motion.h1>
-            <motion.h1
+            </m.h1>
+            <m.h1
               variants={slideUp({ delay: getAnimationDelay(2) })}
               initial="hidden"
               animate="show"
@@ -69,9 +70,9 @@ const Hero = () => {
                 items={tagline}
                 startDelay={(getAnimationDelay(2) + 1.6) * 1000}
               />
-            </motion.h1>
+            </m.h1>
           </div>
-          <motion.p
+          <m.p
             variants={slideUp({ delay: getAnimationDelay(3) })}
             initial="hidden"
             animate="show"
@@ -79,15 +80,15 @@ const Hero = () => {
             style={{ whiteSpace: 'pre-line' }}
           >
             {description}
-          </motion.p>
-          <motion.p
+          </m.p>
+          <m.p
             variants={slideUp({ delay: getAnimationDelay(4) })}
             initial="hidden"
             animate="show"
             className="font-mono text-xs md:text-sm text-accent leading-relaxed"
           >
             {specialText}
-          </motion.p>
+          </m.p>
           <div className="flex flex-row mt-2 md:mt-5">
             {ctas &&
               ctas.map((cta, index) => (
@@ -110,7 +111,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <motion.div
+      <m.div
         exit={{ opacity: 0 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -301,20 +302,24 @@ const Hero = () => {
           </div>
           <div className="relative">
             <div
-              className="absolute -top-96 -right-72 w-[530px] h-[530px] opacity-80 dark:opacity-100 pointer-events-none bg-cover bg-no-repeat"
+              className="absolute -top-96 -right-72 w-[530px] h-[530px] opacity-80 dark:opacity-100 pointer-events-none"
               style={{
-                backgroundImage: 'url(/images/glassify/blur-cyan.png)',
+                background:
+                  'radial-gradient(circle, rgba(20, 223, 230, 0.3) 0%, transparent 55%)',
+                filter: 'blur(50px)',
               }}
             ></div>
             <div
-              className="absolute -bottom-8 -right-52 w-[567px] h-[567px] opacity-80 dark:opacity-100 pointer-events-none bg-cover bg-no-repeat"
+              className="absolute -bottom-8 -right-52 w-[567px] h-[567px] opacity-80 dark:opacity-100 pointer-events-none"
               style={{
-                backgroundImage: 'url(/images/glassify/blur-indigo.png)',
+                background:
+                  'radial-gradient(circle, rgba(133, 151, 255, 0.3) 0%, transparent 55%)',
+                filter: 'blur(60px)',
               }}
             ></div>
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </Wrapper>
   );
 };

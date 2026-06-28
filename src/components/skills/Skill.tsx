@@ -4,7 +4,7 @@ import { getId } from '@/lib/utils/helper';
 
 import { ListItem, ShowLottie, SkillIcon } from '@/components';
 
-import { motion, MotionProps } from 'framer-motion';
+import { m, MotionProps } from 'framer-motion';
 
 type Props = {
   lottie?: any;
@@ -23,7 +23,7 @@ const Skill = ({
   ...rest
 }: Props) => {
   return (
-    <motion.div
+    <m.div
       className={`flex gap-8 sm:gap-10 flex-col lg:flex-row items-center ${className}`}
       {...rest}
     >
@@ -47,7 +47,7 @@ const Skill = ({
       </div>
       {/* Right */}
       <ShowLottie path={lottie} className="md:min-h-[448px] md:min-w-[448px]" />
-    </motion.div>
+    </m.div>
   );
 };
 

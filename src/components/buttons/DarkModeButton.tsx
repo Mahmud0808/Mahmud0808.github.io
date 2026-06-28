@@ -2,7 +2,7 @@
 import { useTheme } from '@/lib/hooks/use-theme';
 
 import { Icon } from '@iconify/react';
-import { motion, MotionProps } from 'framer-motion';
+import { m, MotionProps } from 'framer-motion';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
@@ -21,7 +21,7 @@ const DarkModeButton = ({
   };
 
   return (
-    <motion.button
+    <m.button
       className={`rounded-lg p-1 hover:text-accent focus:text-accent focus:outline-none focus:bg-bg-secondary cursor-pointer w-fit ${className} duration-200`}
       aria-label={isDarkMode ? 'Light mode' : 'Dark mode'}
       onClick={clickHandler}
@@ -32,7 +32,7 @@ const DarkModeButton = ({
         width="26"
         height="26"
       />
-    </motion.button>
+    </m.button>
   );
 };
 

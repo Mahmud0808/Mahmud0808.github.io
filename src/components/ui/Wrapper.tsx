@@ -1,5 +1,5 @@
-import { motion, MotionProps } from 'framer-motion';
-import { ElementType, HTMLAttributes, ReactNode, useMemo } from 'react';
+import { m, MotionProps } from 'framer-motion';
+import React, { ElementType, HTMLAttributes, ReactNode, useMemo } from 'react';
 
 interface Props extends HTMLAttributes<HTMLElement> {
   as?: ElementType;
@@ -17,7 +17,7 @@ const Wrapper = ({
   animate = true,
   ...rest
 }: Props & MotionProps) => {
-  const MotionTag = useMemo(() => motion(as), [as]);
+  const MotionTag = useMemo(() => m[as as keyof typeof m] as React.ElementType, [as]);
 
   if (animate) {
 
@@ -30,13 +30,13 @@ const Wrapper = ({
 
   if (as === 'section') {
     return (
-      <motion.section
+      <m.section
         id={id}
         className={`py-24 md:py-32 ${className}`}
         {...rest}
       >
         {children}
-      </motion.section>
+      </m.section>
     );
   }
 

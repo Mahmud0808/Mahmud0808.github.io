@@ -2,7 +2,8 @@ import { seoData } from '@/lib/content/portfolio';
 import ThemeProvider from '@/lib/hooks/use-theme';
 import fontVariables from '@/lib/utils/fonts';
 
-import Cursor from '@/components/ui/Cursor';
+import CursorLoader from '@/components/ui/CursorLoader';
+import MotionProvider from '@/components/ui/MotionProvider';
 
 import '../styles/globals.css';
 import type { Metadata } from 'next';
@@ -76,11 +77,16 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
+        <link rel="preload" href="/fonts/Agustina-Signature.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <script src="/scripts/no-flash.js" async />
       </head>
       <body className={`text-text bg-bg ${fontVariables}`}>
-        <Cursor className="hidden lg:block" />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <MotionProvider>
+            <CursorLoader />
+            {children}
+          </MotionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

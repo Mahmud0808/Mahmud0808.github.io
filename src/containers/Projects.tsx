@@ -7,7 +7,7 @@ import { Button, ProjectCard, Wrapper } from '@/components';
 
 import { getSectionAnimation, projectVariants } from '@/styles/animations';
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useState } from 'react';
 
 const Projects = () => {
@@ -19,9 +19,9 @@ const Projects = () => {
 
   return (
     <Wrapper animate={false} {...getSectionAnimation}>
-      <motion.h2 className="heading-secondary text-center !mb-12">
+      <m.h2 className="heading-secondary text-center !mb-12">
         {title}
-      </motion.h2>
+      </m.h2>
       <div className="grid gap-6 grid-cols-auto-250 xs:grid-cols-auto-300 place-items-center h-full">
         {sortByYear(visibleProjects).map((project, i) => {
           if (i < PROJECTS_INITIALLY) {
