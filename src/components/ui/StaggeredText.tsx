@@ -87,8 +87,8 @@ const StaggeredText = ({
       initial={animateIn ? 'hidden' : false}
       animate="show"
       exit="exit"
-      aria-label={text}
     >
+      <span className="sr-only">{text}</span>
       {segments.map((seg, i) => {
         const steps = offsetSteps(i, segments.length, staggerDirection);
         const content = seg === ' ' || seg === '' ? ' ' : seg;
