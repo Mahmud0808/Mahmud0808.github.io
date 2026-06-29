@@ -19,6 +19,13 @@ const Cursor = ({ className = '' }: Props) => {
   const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
+    document.documentElement.style.cursor = 'none';
+    return () => {
+      document.documentElement.style.cursor = '';
+    };
+  }, []);
+
+  useEffect(() => {
     const onMove = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
