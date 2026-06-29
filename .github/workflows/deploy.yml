@@ -21,7 +21,12 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Extract repository name
-        run: echo "BASE_PATH=/$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)" >> $GITHUB_ENV
+        run: |
+          OWNER=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 1)
+          REPO=$(echo $GITHUB_REPOSITORY | cut -d '/' -f 2)
+          if [ "$REPO" != "${OWNER}.github.io" ]; then
+            echo "BASE_PATH=/$REPO" >> $GITHUB_ENV
+          fi
 
       - name: Build my App
         run: yarn build && touch ./out/.nojekyll
