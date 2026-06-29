@@ -89,24 +89,50 @@ const Navbar = () => {
 
   useEffect(() => {
     const sectionIds = navLinks.map(({ url }) => url.replace('/#', ''));
+    const extraMappings: Record<string, string> = { 'all-projects': 'projects' };
+    const lastSectionId = sectionIds[sectionIds.length - 1];
     const observers: IntersectionObserver[] = [];
 
-    sectionIds.forEach((id) => {
+    const heroEl = document.getElementById('hero');
+    if (heroEl) {
+      const heroObserver = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection('');
+        },
+        { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+      );
+      heroObserver.observe(heroEl);
+      observers.push(heroObserver);
+    }
+
+    [...sectionIds, ...Object.keys(extraMappings)].forEach((id) => {
       const el = document.getElementById(id);
       if (!el) return;
 
+      const activeId = extraMappings[id] ?? id;
       const observer = new IntersectionObserver(
         ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(id);
+          if (entry.isIntersecting) setActiveSection(activeId);
         },
-        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+        { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
       );
 
       observer.observe(el);
       observers.push(observer);
     });
 
-    return () => observers.forEach((obs) => obs.disconnect());
+    const handleBottomReached = () => {
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 50;
+      if (atBottom) setActiveSection(lastSectionId);
+    };
+
+    window.addEventListener('scroll', handleBottomReached, { passive: true });
+
+    return () => {
+      observers.forEach((obs) => obs.disconnect());
+      window.removeEventListener('scroll', handleBottomReached);
+    };
   }, [navLinks]);
 
   useEffect(() => {
@@ -114,7 +140,7 @@ const Navbar = () => {
       setScrollY(window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
