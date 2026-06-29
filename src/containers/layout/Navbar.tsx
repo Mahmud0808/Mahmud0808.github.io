@@ -48,10 +48,11 @@ type NavItemsProps = {
   children: React.ReactNode;
   index: number;
   delay: number;
+  active?: boolean;
   onClick?: (event: React.MouseEvent) => void;
 };
 
-const NavItem = ({ href, children, onClick, index, delay }: NavItemsProps) => {
+const NavItem = ({ href, children, onClick, index, delay, active }: NavItemsProps) => {
   return (
     <m.li
       className="group"
@@ -61,7 +62,7 @@ const NavItem = ({ href, children, onClick, index, delay }: NavItemsProps) => {
     >
       <CLink
         href={href || `/#${children}`}
-        className="block p-2 duration-500 hover:text-accent rounded-md"
+        className={`block p-2 duration-500 rounded-md ${active ? 'text-accent' : 'hover:text-accent'}`}
         onClick={onClick}
         withPadding
       >
@@ -75,6 +76,7 @@ const Navbar = () => {
   const { cta, navLinks } = navbarSection;
   const [navbarCollapsed, setNavbarCollapsed] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [activeSection, setActiveSection] = useState('');
   const navbarRef = useRef<HTMLDivElement>(null);
 
   const windowWidth = useWindowWidth();
@@ -84,6 +86,28 @@ const Navbar = () => {
   useEffect(() => {
     hideNavWhileScrolling({ when: !navbarCollapsed });
   }, [navbarCollapsed]);
+
+  useEffect(() => {
+    const sectionIds = navLinks.map(({ url }) => url.replace('/#', ''));
+    const observers: IntersectionObserver[] = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
+      );
+
+      observer.observe(el);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((obs) => obs.disconnect());
+  }, [navLinks]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -158,6 +182,7 @@ const Navbar = () => {
                 href={url}
                 index={i}
                 delay={ANIMATION_DELAY}
+                active={activeSection === url.replace('/#', '')}
                 onClick={() => setNavbarCollapsed(false)}
               >
                 {name}
