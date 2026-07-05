@@ -21,21 +21,45 @@ const TabList = ({ experiences }: Props) => {
 
   const sm = getBreakpointsWidth('sm');
 
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [sliderRect, setSliderRect] = useState({
+    top: 0,
+    left: 0,
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    const btn = buttonRefs.current[activeExperience];
+    if (!btn) return;
+
+    const update = () => {
+      setSliderRect({
+        top: btn.offsetTop,
+        left: btn.offsetLeft,
+        width: btn.offsetWidth,
+        height: btn.offsetHeight,
+      });
+    };
+
+    update();
+
+    const ro = new ResizeObserver(update);
+    ro.observe(btn);
+    if (btn.parentElement) ro.observe(btn.parentElement);
+    return () => ro.disconnect();
+  }, [activeExperience, windowWidth]);
+
   const sliderStyle =
     windowWidth <= sm
       ? {
-          left: `calc(${activeExperience}*120px)`,
+          left: sliderRect.left,
+          width: sliderRect.width,
         }
       : {
-          top: `calc(${activeExperience}*2.5rem)`,
+          top: sliderRect.top,
+          height: sliderRect.height,
         };
-
-  const sliderBackgroundStyle =
-    windowWidth <= sm
-      ? {
-          width: `calc(${experiences.length}*120px)`,
-        }
-      : {};
 
   const measureRef = useRef<HTMLDivElement>(null);
   const [contentHeight, setContentHeight] = useState<number | undefined>(undefined);
@@ -56,27 +80,29 @@ const TabList = ({ experiences }: Props) => {
   return (
     <div className="flex flex-col sm:flex-row text-sm md:text-base gap-6 md:gap-10">
       {/* Sidebar */}
-      <div className="font-mono text-xs sm:text-sm relative flex justify-start sm:flex-col overflow-scroll sm:overflow-auto sm:min-w-[180px] no-scrollbar">
-        {experiences.map(({ company }, i) => (
-          <button
-            key={i}
-            className={`h-10 min-w-[120px] sm:w-auto sm:px-5 sm:!text-left capitalize hover:bg-accent-light hover:text-accent focus:outline-none focus:bg-accent-light focus:text-accent ${
-              i === activeExperience ? 'text-accent bg-accent-light' : ''
-            }`}
-            onClick={() => setActiveExperience(i)}
-          >
-            {company}
-          </button>
-        ))}
-        {/* Slider */}
-        <div
-          style={sliderBackgroundStyle}
-          className="absolute h-0.5 w-full sm:w-1 sm:h-full rounded-full md:rounded-none bottom-0 sm:inset-0 left-0 max-sm:right-0 bg-dark-3"
-        ></div>
-        <div
-          style={sliderStyle}
-          className="absolute h-0.5 w-[120px] sm:w-1 sm:h-10 rounded-full md:rounded-none bg-accent bottom-0 left-0 sm:inset-0 transition-all duration-250 delay-100 in-scroll"
-        ></div>
+      <div className="font-mono text-xs sm:text-sm flex justify-start overflow-x-auto sm:overflow-visible sm:min-w-[180px] no-scrollbar">
+        <div className="relative flex justify-start sm:flex-col w-max sm:w-full">
+          {experiences.map(({ company }, i) => (
+            <button
+              key={i}
+              ref={(el) => {
+                buttonRefs.current[i] = el;
+              }}
+              className={`min-h-[2.5rem] min-w-[120px] py-2 px-4 whitespace-nowrap sm:whitespace-normal sm:w-auto sm:px-5 sm:!text-left capitalize hover:bg-accent-light hover:text-accent focus:outline-none focus:bg-accent-light focus:text-accent ${
+                i === activeExperience ? 'text-accent bg-accent-light' : ''
+              }`}
+              onClick={() => setActiveExperience(i)}
+            >
+              {company}
+            </button>
+          ))}
+          {/* Slider */}
+          <div className="absolute h-0.5 w-full sm:w-1 sm:h-full rounded-full md:rounded-none bottom-0 sm:inset-y-0 left-0 bg-dark-3"></div>
+          <div
+            style={sliderStyle}
+            className="absolute h-0.5 sm:h-auto sm:w-1 rounded-full md:rounded-none bg-accent bottom-0 sm:bottom-auto left-0 transition-all duration-250 delay-100 in-scroll"
+          ></div>
+        </div>
       </div>
 
       <m.div
