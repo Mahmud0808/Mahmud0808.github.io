@@ -4,6 +4,20 @@ export const experienceSection: ExperienceSectionType = {
   title: 'experience',
   experiences: [
     {
+      company: 'Remote Software Team',
+      companyUrl: '',
+      role: 'Senior Mobile & Web Developer (Contract)',
+      started: 'april 2025',
+      upto: 'present',
+      tasks: [
+        'Worked remotely with a distributed team on a contractual basis, contributing to multiple production-ready applications.',
+        'Developed mobile applications that serve as app-based representations of existing websites across various industries.',
+        'Built multiple 2D games, implementing custom physics systems and gameplay mechanics from scratch.',
+        'Designed and developed an internal web platform to manage and monitor the production pipeline for all team applications.',
+        'Progressed from a junior role to a senior position, taking ownership of architecture decisions, feature planning, and technical improvements.',
+      ],
+    },
+    {
       company: 'Fiverr',
       companyUrl: 'https://www.fiverr.com/drdisagree',
       role: 'Self employed | Full Stack Developer',
