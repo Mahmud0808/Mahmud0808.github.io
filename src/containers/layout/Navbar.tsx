@@ -5,6 +5,7 @@ import useWindowWidth from '@/lib/hooks/use-window-width';
 import { getBreakpointsWidth } from '@/lib/utils/helper';
 
 import { Button, DarkModeButton, Link as CLink, NavButton } from '@/components';
+import GradualBlur from '@/components/ui/GradualBlur';
 
 import { fadeIn, slideIn } from '@/styles/animations';
 
@@ -52,7 +53,14 @@ type NavItemsProps = {
   onClick?: (event: React.MouseEvent) => void;
 };
 
-const NavItem = ({ href, children, onClick, index, delay, active }: NavItemsProps) => {
+const NavItem = ({
+  href,
+  children,
+  onClick,
+  index,
+  delay,
+  active,
+}: NavItemsProps) => {
   return (
     <m.li
       className="group"
@@ -62,7 +70,9 @@ const NavItem = ({ href, children, onClick, index, delay, active }: NavItemsProp
     >
       <CLink
         href={href || `/#${children}`}
-        className={`block p-2 duration-500 rounded-md ${active ? 'text-accent' : 'hover:text-accent'}`}
+        className={`block p-2 duration-500 rounded-md ${
+          active ? 'text-accent' : 'hover:text-accent'
+        }`}
         onClick={onClick}
         withPadding
       >
@@ -89,7 +99,9 @@ const Navbar = () => {
 
   useEffect(() => {
     const sectionIds = navLinks.map(({ url }) => url.replace('/#', ''));
-    const extraMappings: Record<string, string> = { 'all-projects': 'projects' };
+    const extraMappings: Record<string, string> = {
+      'all-projects': 'projects',
+    };
     const lastSectionId = sectionIds[sectionIds.length - 1];
     const observers: IntersectionObserver[] = [];
 
@@ -175,10 +187,23 @@ const Navbar = () => {
       animate="show"
       id="navbar"
       ref={navbarRef}
-      className={`fixed inset-x-0 top-0 right-0 z-50 flex items-end justify-between px-8 py-4 duration-500 md:px-6 xl:px-12 ${
-        scrollY > 0 ? 'backdrop-blur-lg' : ''
-      }`}
+      className="fixed inset-x-0 top-0 right-0 z-50 flex items-end justify-between px-8 py-4 duration-500 md:px-6 xl:px-12"
     >
+      <GradualBlur
+        target="parent"
+        position="top"
+        height="6rem"
+        strength={2.2}
+        divCount={6}
+        curve="ease-out"
+        exponential={false}
+        opacity={1}
+        zIndex={-1}
+        style={{
+          opacity: scrollY > 0 ? 1 : 0,
+          transition: 'opacity 0.5s ease',
+        }}
+      />
       <h1 className="relative text-2xl capitalize font-signature text-accent group top-1">
         <Link
           href="/#hero"
