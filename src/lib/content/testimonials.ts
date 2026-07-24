@@ -35,11 +35,6 @@ export const testimonialsSection = {
       meta: 'Fiverr · United States',
     },
     {
-      quote: 'Very professional and fast. All recommendations for this guy!',
-      name: 'sofix19',
-      meta: 'Fiverr · Croatia',
-    },
-    {
       quote: 'the best person on the platform',
       name: 'marijnko',
       meta: 'Fiverr · Croatia',

@@ -56,7 +56,7 @@ export const skillsSection: SkillsSectionType = {
     },
     {
       id: getId(),
-      title: 'UI / UX Designing',
+      title: 'UI / UX Design',
       points: [
         'Interfaces designed for real thumbs, not just mockup screenshots.',
         'Design systems and style guides a team can actually follow.',

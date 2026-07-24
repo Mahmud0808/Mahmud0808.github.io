@@ -407,7 +407,7 @@ export const projectsSection: ProjectsSectionType = {
       name: 'MusicPlayer',
       subtitle: 'Web-Based Music Player',
       url: 'https://mahmud0808.github.io/MusicPlayer',
-      repo: 'https://github.com/Mahmud080Objectives: Create a web-based music player using HTML, CSS, and JavaScript. The project focuses on delivering a seamless audio playback experience with a clean and intuitive interface.',
+      repo: 'https://github.com/Mahmud0808/MusicPlayer',
       img: '/images/projects/music-player.webp',
       year: 2023,
       projectSkills: [
