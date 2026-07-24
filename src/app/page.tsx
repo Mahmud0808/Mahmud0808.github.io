@@ -9,6 +9,7 @@ const Skills = dynamic(() => import('@/containers/Skills'));
 const Experience = dynamic(() => import('@/containers/Experience'));
 const FeaturedProjects = dynamic(() => import('@/containers/FeaturedProjects'));
 const Projects = dynamic(() => import('@/containers/Projects'));
+const Testimonials = dynamic(() => import('@/containers/Testimonials'));
 const Contact = dynamic(() => import('@/containers/Contact'));
 
 export const metadata: Metadata = {
@@ -28,6 +29,7 @@ const Home: NextPage = () => {
         <Experience />
         <FeaturedProjects />
         <Projects />
+        <Testimonials />
         <Contact />
       </Layout>
     </>

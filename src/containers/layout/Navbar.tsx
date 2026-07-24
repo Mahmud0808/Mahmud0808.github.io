@@ -103,6 +103,7 @@ const Navbar = () => {
     const sectionIds = navLinks.map(({ url }) => url.replace('/#', ''));
     const extraMappings: Record<string, string> = {
       'all-projects': 'projects',
+      testimonials: 'projects',
     };
     const lastSectionId = sectionIds[sectionIds.length - 1];
     const allIds = [...sectionIds, ...Object.keys(extraMappings)];

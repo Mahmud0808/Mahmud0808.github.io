@@ -4,7 +4,7 @@ export const experienceSection: ExperienceSectionType = {
   title: 'experience',
   experiences: [
     {
-      company: 'Remote Software Team',
+      company: 'International Software Team',
       companyUrl: '',
       role: 'Senior Mobile & Web Developer (Contract)',
       started: 'april 2025',
