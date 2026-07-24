@@ -69,7 +69,7 @@ const OrbitVisual = ({ inner, outer, centerIcon = 'tabler:code' }: Props) => {
   return (
     <div
       aria-hidden="true"
-      className="relative grid h-[300px] w-[300px] scale-90 select-none place-items-center xs:scale-100 sm:h-[340px] sm:w-[340px]"
+      className="relative grid h-[300px] w-[300px] scale-75 select-none place-items-center xs:scale-[0.85] sm:h-[340px] sm:w-[340px] sm:scale-100"
     >
       <Ring items={outer} radius={150} duration={55} />
       <Ring items={inner} radius={88} duration={38} reverse />

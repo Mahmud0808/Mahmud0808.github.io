@@ -53,7 +53,7 @@ const Button = (props: Props & MotionProps) => {
       : 'text-sm p-4 px-6 border-2'
   } block ${
     center ? 'mx-auto' : ''
-  } w-fit font-mono capitalize rounded-full border-accent text-accent bg-transparent hover:bg-accent-light focus:outline-none focus:bg-accent-light transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent/20 active:translate-y-0 active:scale-[0.98] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100 cursor-pointer ${className}`;
+  } w-fit font-mono capitalize rounded-full border-accent text-accent bg-white/90 dark:bg-slate-800/90 hover:bg-accent-light focus:outline-none focus:bg-accent-light transition-[background-color,transform,box-shadow,color] duration-200 hover:-translate-y-0.5 hover:shadow-md hover:shadow-accent/20 active:translate-y-0 active:scale-[0.98] motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:active:scale-100 cursor-pointer ${className}`;
 
   if (props.type === 'link') {
     const { sameTab, ...motionProps } = props;
