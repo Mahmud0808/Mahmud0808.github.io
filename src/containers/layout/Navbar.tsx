@@ -30,18 +30,20 @@ const hideNavWhileScrolling = ({
   when: boolean;
 }) => {
   const nav = document.getElementById(id);
-  if (!nav) return;
+  if (!nav) return () => {};
 
-  let prevScrollPos = window.pageYOffset;
+  let prevScrollPos = window.scrollY;
 
-  window.onscroll = () => {
-    if (when) {
-      const curScrollPos = window.pageYOffset;
-      if (prevScrollPos < curScrollPos) nav.style.top = `-${offset}px`;
-      else nav.style.top = '0';
-      prevScrollPos = curScrollPos;
-    }
+  const onScroll = () => {
+    if (!when) return;
+    const curScrollPos = window.scrollY;
+    if (prevScrollPos < curScrollPos) nav.style.top = `-${offset}px`;
+    else nav.style.top = '0';
+    prevScrollPos = curScrollPos;
   };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  return () => window.removeEventListener('scroll', onScroll);
 };
 
 type NavItemsProps = {
@@ -94,7 +96,7 @@ const Navbar = () => {
   const ANIMATION_DELAY = windowWidth <= md ? 0 : 0.8;
 
   useEffect(() => {
-    hideNavWhileScrolling({ when: !navbarCollapsed });
+    return hideNavWhileScrolling({ when: !navbarCollapsed });
   }, [navbarCollapsed]);
 
   useEffect(() => {
@@ -103,47 +105,39 @@ const Navbar = () => {
       'all-projects': 'projects',
     };
     const lastSectionId = sectionIds[sectionIds.length - 1];
-    const observers: IntersectionObserver[] = [];
+    const allIds = [...sectionIds, ...Object.keys(extraMappings)];
 
-    const heroEl = document.getElementById('hero');
-    if (heroEl) {
-      const heroObserver = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection('');
-        },
-        { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
-      );
-      heroObserver.observe(heroEl);
-      observers.push(heroObserver);
-    }
-
-    [...sectionIds, ...Object.keys(extraMappings)].forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-
-      const activeId = extraMappings[id] ?? id;
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) setActiveSection(activeId);
-        },
-        { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
-      );
-
-      observer.observe(el);
-      observers.push(observer);
-    });
-
-    const handleBottomReached = () => {
+    const updateActiveSection = () => {
       const atBottom =
         window.innerHeight + window.scrollY >= document.body.scrollHeight - 50;
-      if (atBottom) setActiveSection(lastSectionId);
+      if (atBottom) {
+        setActiveSection(lastSectionId);
+        return;
+      }
+
+      const probe = window.innerHeight * 0.4;
+      let current = '';
+
+      for (const id of allIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= probe && rect.bottom > probe) {
+          current = extraMappings[id] ?? id;
+        }
+      }
+
+      setActiveSection(current);
     };
 
-    window.addEventListener('scroll', handleBottomReached, { passive: true });
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection, { passive: true });
 
     return () => {
-      observers.forEach((obs) => obs.disconnect());
-      window.removeEventListener('scroll', handleBottomReached);
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
     };
   }, [navLinks]);
 
@@ -225,7 +219,7 @@ const Navbar = () => {
       />
 
       {(navbarCollapsed || windowWidth > md) && (
-        <nav className="capitalize absolute text-sm duration-200 md:bg-transparent z-50 w-[90%] left-1/2 -translate-x-1/2 top-full h-max rounded-xl shadow-xl p-6 bg-bg-secondary md:blocks md:static md:w-auto md:left-auto md:transform-none md:top-auto md:rounded-none md:shadow-none md:p-0 md:h-auto">
+        <nav className="capitalize absolute text-sm duration-200 md:bg-transparent z-50 w-[90%] left-1/2 -translate-x-1/2 top-full h-max rounded-xl shadow-soft-lg dark:shadow-xl p-6 bg-bg-secondary md:blocks md:static md:w-auto md:left-auto md:transform-none md:top-auto md:rounded-none md:shadow-none dark:md:shadow-none md:p-0 md:h-auto">
           <ul className="flex flex-col items-stretch gap-3 list-style-none lg:gap-5 xl:gap-6 md:flex-row md:items-center">
             {navLinks.map(({ name, url }, i) => (
               <NavItem

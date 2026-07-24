@@ -24,7 +24,7 @@ const Hero = () => {
   return (
     <Wrapper
       id="hero"
-      className="flex flex-col justify-center h-full min-h-screen gap-6 xs:gap-5"
+      className="flex flex-col justify-center h-full min-h-svh gap-6 xs:gap-5"
     >
       <div className="relative col-span-2 z-10">
         <m.div
@@ -34,7 +34,7 @@ const Hero = () => {
           transition={{ delay: 0.05 }}
         >
           <div
-            className="absolute bottom-full right-full -mr-48 lg:-mr-72 -m-64 w-[530px] h-[530px] opacity-50 pointer-events-none"
+            className="absolute bottom-full right-full -mr-48 lg:-mr-72 -m-64 w-[530px] h-[530px] opacity-30 dark:opacity-50 pointer-events-none"
             style={{
               background:
                 'radial-gradient(circle, rgba(20,170,230,0.33) 0%, transparent 55%)',
@@ -60,7 +60,7 @@ const Hero = () => {
             >
               {title}
             </m.h1>
-            <m.h1
+            <m.p
               variants={slideUp({ delay: getAnimationDelay(2) })}
               initial="hidden"
               animate="show"
@@ -70,13 +70,13 @@ const Hero = () => {
                 items={tagline}
                 startDelay={(getAnimationDelay(2) + 1.6) * 1000}
               />
-            </m.h1>
+            </m.p>
           </div>
           <m.p
             variants={slideUp({ delay: getAnimationDelay(3) })}
             initial="hidden"
             animate="show"
-            className="max-w-3xl text-base md:text-lg text-justify"
+            className="max-w-3xl text-base md:text-lg"
             style={{ whiteSpace: 'pre-line' }}
           >
             {description}
@@ -85,24 +85,28 @@ const Hero = () => {
             variants={slideUp({ delay: getAnimationDelay(4) })}
             initial="hidden"
             animate="show"
-            className="font-mono text-xs md:text-sm text-accent leading-relaxed"
+            className="flex items-center gap-3 font-mono text-xs md:text-sm text-accent leading-relaxed"
           >
+            <span className="relative flex h-2.5 w-2.5" aria-hidden="true">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-variant opacity-60 motion-reduce:hidden"></span>
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-accent-variant"></span>
+            </span>
             {specialText}
           </m.p>
-          <div className="flex flex-row mt-2 md:mt-5">
+          <div className="flex flex-row flex-wrap gap-2 md:gap-3 mt-2 md:mt-5">
             {ctas &&
-              ctas.map((cta, index) => (
+              ctas.map((cta) => (
                 <Button
-                  key={index}
+                  key={cta.title}
                   size="lg"
                   type="link"
                   variants={slideUp({ delay: getAnimationDelay(5) })}
                   initial="hidden"
                   animate="show"
                   href={cta?.url ?? '#'}
-                  className={`mr-2 md:mr-3 ${
-                    cta.hideInDesktop ? 'md:hidden' : ''
-                  } ${cta.hideInMobile ? 'hidden md:block' : ''}`}
+                  className={`${cta.hideInDesktop ? 'md:hidden' : ''} ${
+                    cta.hideInMobile ? 'hidden md:block' : ''
+                  }`}
                   sameTab={cta?.sameTab}
                 >
                   {cta.title}
@@ -302,7 +306,7 @@ const Hero = () => {
           </div>
           <div className="relative">
             <div
-              className="absolute -top-96 -right-72 w-[530px] h-[530px] opacity-80 dark:opacity-100 pointer-events-none"
+              className="absolute -top-96 -right-72 w-[530px] h-[530px] opacity-40 dark:opacity-100 pointer-events-none"
               style={{
                 background:
                   'radial-gradient(circle, rgba(20, 223, 230, 0.3) 0%, transparent 55%)',
@@ -310,7 +314,7 @@ const Hero = () => {
               }}
             ></div>
             <div
-              className="absolute -bottom-8 -right-52 w-[567px] h-[567px] opacity-80 dark:opacity-100 pointer-events-none"
+              className="absolute -bottom-8 -right-52 w-[567px] h-[567px] opacity-40 dark:opacity-100 pointer-events-none"
               style={{
                 background:
                   'radial-gradient(circle, rgba(133, 151, 255, 0.3) 0%, transparent 55%)',

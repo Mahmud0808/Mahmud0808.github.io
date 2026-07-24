@@ -22,7 +22,7 @@ export const author = {
 export const seoData = {
   title: 'Mahmudul Hasan Khan | Portfolio',
   description:
-    'Passionate about mobile app and web development, focusing on creating innovative digital solutions.',
+    'Software engineer from Dhaka. Android apps with nearly a million downloads, plus full-stack web products built with Next.js, React and Node.js.',
   author: author.name,
   image: 'https://i.postimg.cc/25zdR8ny/Mahmudul-Hasan-Khan-Portfolio.png',
   url: 'https://mahmud0808.github.io',
@@ -54,9 +54,6 @@ export const seoData = {
     'Backend Developer',
     'Full Stack Developer',
     'Open Source Contributor',
-    'Tech Enthusiast',
-    'Innovative Developer',
-    'Digital Solutions Developer',
     'Multiplatform Developer',
     'Cross Platform Developer',
     'Compose Multiplatform Developer',

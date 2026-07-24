@@ -2,6 +2,8 @@ import { FeaturedProjectType } from '@/lib/types';
 import { blurImageURL } from '@/lib/utils/config';
 import { cn } from '@/lib/utils/helper';
 
+import SpotlightCard from '@/components/ui/SpotlightCard';
+
 import { Icon } from '@iconify/react';
 import { m, MotionProps } from 'framer-motion';
 import Image from 'next/image';
@@ -23,112 +25,87 @@ const FeaturedProject = ({
   ...rest
 }: Props) => {
   return (
-    <m.div
-      className={cn(
-        'relative min-h-[220px] sm:min-h-[360px] h-full overflow-hidden lg:overflow-visible rounded-lg lg:rounded-xl shadow-lg lg:shadow-none text-center lg:text-right !z-40',
-        align === 'left' && 'lg:text-left'
-      )}
-      {...rest}
-    >
-      <div
-        className={cn(
-          'w-full lg:max-w-[60%] absolute inset-0 h-full -z-20 lg:z-0 lg:object-contain rounded-lg overflow-hidden shadow-2xl group',
-          align === 'left' && 'ml-auto'
-        )}
-      >
-        <Link
-          href={`${url}`}
-          target="_blank"
-          className="absolute inset-0 z-50 block bg-transparent"
-        >
-          <Image
-            src={img}
-            alt={name}
-            width={720}
-            height={480}
-            className="h-full w-full object-cover duration-200 group-hover:scale-105 transition-transform"
-            placeholder="blur"
-            blurDataURL={blurImageURL}
-          />
-        </Link>
-      </div>
-      <div
-        className={cn(
-          'lg:max-w-[45%] space-y-2 lg:space-y-5 w-full h-full p-5 lg:p-0',
-          'absolute lg:top-1/2 lg:-translate-y-1/2 lg:right-0',
-          'lg:h-auto left-0 lg:left-auto top-0 right-auto lg:bg-none lg:text-inherit',
-          'flex flex-col justify-end',
-          'bg-gradient-to-t from-black/90 to-transparent group-hover:from-accent group-focus:from-accent',
-          align === 'left' && 'lg:left-0'
-        )}
-      >
-        <div>
-          <div className="font-mono hidden lg:block text-accent capitalize text-xs lg:mb-2.5">
-            featured project
-          </div>
-          <h2 className="heading-tertiary !text-white lg:!text-dark-2 !font-semibold lg:!font-normal !normal-case">
-            <a
-              href={url}
-              className="block duration-200 hover:text-accent"
-              target="_blank"
-            >
-              {name}
-            </a>
-          </h2>
-        </div>
-
-        <div className="lg:bg-bg-secondary rounded-md lg:shadow-lg lg:p-5">
-          <div
-            className={cn(
-              'lg:max-w-sm text-slate-200 lg:text-inherit text-sm lg:text-base',
-              align === 'right' && 'ml-auto'
-            )}
-          >
-            <p className="text-dark-1">{description}</p>
-            <div className="text-xs hidden lg:block font-mono text-accent my-3 lg:my-2 lg:mt-3">
-              What is it about?
-            </div>
-            <div className="text-base hidden lg:block lg:text-sm">{tasks}</div>
-          </div>
-        </div>
-
-        <p
+    <m.div {...rest}>
+      <SpotlightCard className="overflow-hidden rounded-2xl border border-slate-900/10 bg-white/60 backdrop-blur-sm shadow-soft dark:bg-transparent dark:border-slate-50/10 dark:shadow-2xl">
+        <article
           className={cn(
-            'font-mono text-[10px] text-sky-400 lg:text-accent lg:text-xs justify-center capitalize flex flex-wrap gap-x-3 lg:gap-x-5 items-center lg:justify-end',
-            align === 'left' && 'lg:justify-start'
+            'group flex flex-col lg:flex-row',
+            align === 'left' && 'lg:flex-row-reverse'
           )}
         >
-          {projectSkills.map(({ name }) => (
-            <span key={name.replaceAll(' ', '')}>
-              {name.replaceAll(' ', '-')}
-            </span>
-          ))}
-        </p>
-
-        {repo && (
-          <div
-            className={cn(
-              'flex lg:justify-end items-center gap-3',
-              align === 'left' && 'lg:justify-start'
-            )}
+          <Link
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`Visit ${name}`}
+            className="relative block overflow-hidden lg:w-[55%]"
           >
-            <a
-              href={repo}
-              className="block duration-200 hover:text-accent"
-              target="_blank"
-            >
-              <Icon icon="tabler:brand-github" width={22} height={22} />
-            </a>
-            <a
-              href={url}
-              className="block duration-200 hover:text-accent"
-              target="_blank"
-            >
-              <Icon icon="ci:external-link" width={24} height={24} />
-            </a>
+            <Image
+              src={img}
+              alt={`Screenshot of ${name}`}
+              width={720}
+              height={480}
+              className="aspect-video h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none lg:aspect-auto"
+              placeholder="blur"
+              blurDataURL={blurImageURL}
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+            />
+          </Link>
+
+          <div className="flex flex-col gap-4 p-6 sm:p-8 lg:w-[45%] lg:p-9">
+            <div className="space-y-2">
+              <p className="font-mono text-xs capitalize text-accent">
+                featured project
+              </p>
+              <h3 className="heading-tertiary !normal-case">
+                <a
+                  href={url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="duration-200 hover:text-accent"
+                >
+                  {name}
+                </a>
+              </h3>
+            </div>
+
+            <p className="text-dark-1">{description}</p>
+            <p className="text-sm">{tasks}</p>
+
+            <ul className="flex flex-wrap gap-x-4 gap-y-1.5 font-mono text-xs capitalize text-accent">
+              {projectSkills.map(({ name: skill }) => (
+                <li key={skill}>{skill.replaceAll(' ', '-')}</li>
+              ))}
+            </ul>
+
+            <div className="mt-auto flex items-center gap-4 pt-2">
+              {repo && (
+                <a
+                  href={repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`${name} source code on GitHub`}
+                  className="block duration-200 hover:text-accent"
+                >
+                  <Icon icon="tabler:brand-github" width={22} height={22} />
+                </a>
+              )}
+              <a
+                href={url}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`Visit ${name}`}
+                className="block duration-200 hover:text-accent"
+              >
+                <Icon icon="ci:external-link" width={24} height={24} />
+              </a>
+            </div>
           </div>
-        )}
-      </div>
+        </article>
+      </SpotlightCard>
     </m.div>
   );
 };

@@ -1,12 +1,11 @@
 'use client';
 import { ProjectType } from '@/lib/types';
 import { blurImageURL, prefix } from '@/lib/utils/config';
-import { getId } from '@/lib/utils/helper';
 
 import { Icon } from '@iconify/react';
 import { m, MotionProps } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { MouseEvent, useRef } from 'react';
 import ProjectSkillIcon from '../projects/ProjectSkillIcon';
 
 const ProjectCard = ({
@@ -20,80 +19,80 @@ const ProjectCard = ({
   projectSkills,
   ...rest
 }: ProjectType & MotionProps) => {
-  // To avoid hydration failed error
-  const [domLoaded, setDomLoaded] = useState(false);
+  const cardRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    setDomLoaded(true);
-  }, []);
+  const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
+    const el = cardRef.current;
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty('--mx', `${e.clientX - rect.left}px`);
+    el.style.setProperty('--my', `${e.clientY - rect.top}px`);
+  };
 
-  return domLoaded ? (
-    <m.div
+  return (
+    <m.article
       {...rest}
-      className="w-full max-w-[350px] !z-40 flex flex-col h-full"
-      id={id}
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className="spotlight-card group relative !z-40 hover:!z-[45] focus-within:!z-[45] flex h-full w-full max-w-none sm:max-w-[350px] flex-col rounded-2xl border border-slate-900/10 bg-white/60 backdrop-blur-sm shadow-soft dark:bg-transparent transition-transform duration-300 hover:-translate-y-1.5 focus-within:-translate-y-1.5 dark:border-slate-50/10 dark:shadow-2xl motion-reduce:transition-none motion-reduce:hover:translate-y-0"
     >
-      <button
-        onClick={(e) => {
-          // Don't run this if the clicked target is an anchor element
-          if ((e.target as HTMLElement).closest('a')) return;
-          window.open(url, '_blank');
-        }}
-        className="flex flex-col h-full w-full rounded-md shadow-xl bg-bg-secondary dark:shadow-2xl group"
-      >
-        <div className="overflow-hidden relative w-full h-[200px] rounded-t-md">
-          <Image
-            fill
-            src={`${prefix}${img}`}
-            alt={name}
-            placeholder="blur"
-            blurDataURL={blurImageURL}
-            className="object-cover transition-transform duration-300 group-hover:scale-105 group-focus:scale-105"
-          />
+      <div className="relative aspect-[7/4] w-full overflow-hidden rounded-t-2xl">
+        <Image
+          fill
+          sizes="(max-width: 640px) 100vw, 350px"
+          src={`${prefix}${img}`}
+          alt={`Preview of ${name}`}
+          placeholder="blur"
+          blurDataURL={blurImageURL}
+          className="object-cover transition-transform duration-500 ease-out group-hover:scale-105 group-focus-within:scale-105 motion-reduce:transition-none"
+        />
+      </div>
+      <div className="flex flex-grow flex-col space-y-1 px-4 py-3 text-left">
+        <div className="flex justify-between font-medium capitalize">
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            className="text-slate-800 duration-200 after:absolute after:inset-0 after:content-[''] group-hover:text-accent dark:text-slate-200"
+          >
+            {name}
+          </a>
+          <span className="mr-1 font-mono text-sm text-text">{year}</span>
         </div>
-        <div className="px-4 py-3 space-y-1 rounded-b-md flex flex-col flex-grow">
-          <>
-            <div className="flex justify-between font-medium capitalize">
-              <span className="text-slate-800 dark:text-slate-200 duration-200 group-hover:text-accent">
-                {name}
-              </span>
-              <span className="mr-1">{year}</span>
-            </div>
-            <p className="text-start text-sm">{subtitle}</p>
-            <div className="font-mono text-xs capitalize pt-2">
-              <div
-                key={getId()}
-                className="flex flex-wrap justify-items-start gap-2"
-              >
-                {projectSkills.map(({ name, icon }) => (
-                  <ProjectSkillIcon key={getId()} src={icon} name={name} />
-                ))}
-              </div>
-            </div>
-          </>
-          <div className="flex space-x-4 pt-4 mt-auto">
+        <p className="text-start text-sm">{subtitle}</p>
+        <div className="pt-2 font-mono text-xs capitalize">
+          <div className="flex flex-wrap justify-items-start gap-2">
+            {projectSkills.map(({ name: skillName, icon }) => (
+              <ProjectSkillIcon key={skillName} src={icon} name={skillName} />
+            ))}
+          </div>
+        </div>
+        <div className="relative z-10 mt-auto flex space-x-4 pt-4">
+          {repo && (
             <a
               href={repo}
-              className="flex items-center gap-1 duration-200 text-text hover:text-accent rounded-sm text-sm"
               target="_blank"
+              rel="noreferrer"
+              aria-label={`${name} source code on GitHub`}
+              className="flex items-center gap-1 rounded-sm text-sm text-text duration-200 hover:text-accent"
             >
               <Icon icon="tabler:brand-github" width={16} height={16} />
               GitHub
             </a>
-            <a
-              href={url}
-              className="flex items-center gap-1 duration-200 text-text hover:text-accent rounded-sm text-sm"
-              target="_blank"
-            >
-              <Icon icon="ci:external-link" width={16} height={16} />
-              Demo
-            </a>
-          </div>
+          )}
+          <a
+            href={url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${name} live demo`}
+            className="flex items-center gap-1 rounded-sm text-sm text-text duration-200 hover:text-accent"
+          >
+            <Icon icon="ci:external-link" width={16} height={16} />
+            Demo
+          </a>
         </div>
-      </button>
-    </m.div>
-  ) : (
-    <></>
+      </div>
+    </m.article>
   );
 };
 

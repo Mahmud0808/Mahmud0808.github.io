@@ -1,21 +1,17 @@
-import { Button, ShowLottie } from '@/components';
-import { Layout } from '@/containers';
+import { Button } from '@/components';
+import NotFoundVisual from '@/components/ui/NotFoundVisual';
 
 const NotFound = () => {
   return (
-    <Layout className="grid h-screen place-items-center">
+    <main className="grid min-h-svh place-items-center px-6">
       <div className="w-full max-w-xl text-center">
-        <ShowLottie path="/lotties/404.json" className="mx-auto" />
+        <NotFoundVisual />
 
-        <p className="mt-5 text-3xl capitalize md:text-4xl text-dark-2">
-          page not found
-        </p>
-
-        <Button type="link" href="/" size="lg" className="mt-20" sameTab center>
+        <Button type="link" href="/" size="lg" className="mt-16" sameTab center>
           go home
         </Button>
       </div>
-    </Layout>
+    </main>
   );
 };
 

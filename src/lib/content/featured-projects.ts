@@ -8,7 +8,7 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
       name: 'Iconify',
       description: 'Open-source Android theming application.',
       tasks:
-        'Iconify lets you customize your Android 12+ device easily. Change icons, colors, shapes, and even the notification panel for a personalized look that suits your style.',
+        'Iconify gives Android 12+ owners full control of their system look - icons, colors, shapes, even the notification panel. No two setups end up alike.',
       url: 'https://github.com/Mahmud0808/Iconify',
       img: '/images/projects/iconify.webp',
       projectSkills: [
@@ -21,9 +21,9 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
     {
       id: 'colorblendr',
       name: 'ColorBlendr',
-      description: 'Customize Material You colors of your device.',
+      description: 'Material You color control for Android 12+.',
       tasks:
-        'An application for customizing Material You colors on devices with Android 12+. It lets you tweak accent colors, background saturation, and more for a personalized look.',
+        'ColorBlendr rewires Material You theming on Android 12+. Tweak accent colors, background saturation and more - straight from one clean interface.',
       url: 'https://github.com/Mahmud0808/ColorBlendr',
       img: '/images/projects/colorblendr.webp',
       projectSkills: [

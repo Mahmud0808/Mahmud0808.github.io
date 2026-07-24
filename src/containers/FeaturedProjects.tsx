@@ -10,17 +10,13 @@ import { getSectionAnimation } from '@/styles/animations';
 const FeaturedProjects = () => {
   return (
     <Wrapper id="projects" {...getSectionAnimation}>
-      <div className="mb-20 space-y-3 text-center lg:text-left">
+      <div className="mb-12 text-center md:mb-16 lg:text-left">
         <h2 className="heading-secondary !mb-0 capitalize">
           {featuredProjectsSection.title}
         </h2>
-
-        <p className="font-mono lg:hidden text-accent capitalize text-xs lg:mb-2.5">
-          featured projects
-        </p>
       </div>
 
-      <div className="space-y-10 md:space-y-16 lg:space-y-36">
+      <div className="space-y-8 md:space-y-12">
         {featuredProjectsSection.projects.map((project, i) => (
           <FeaturedProject
             key={project.id}

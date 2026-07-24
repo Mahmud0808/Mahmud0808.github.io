@@ -2,8 +2,12 @@ type Props = { children: React.ReactNode; className?: string; multiLine?: boolea
 
 const ListItem = ({ children, className = '', multiLine = false }: Props) => {
   return (
-    <li className={`gap-1 flex ${!multiLine ? 'items-center transition-all duration-300 hover:translate-x-2 hover:text-accent select-none cursor-default' : 'text-justify'} ${className}`}>
-      <span className={`min-w-10 ${multiLine ? 'mt-[1px]' : ''}`}>
+    <li className={`gap-1 flex ${!multiLine ? 'items-center transition-all duration-300 hover:translate-x-2 hover:text-accent select-none cursor-default' : ''} ${className}`}>
+      <span
+        className={`min-w-10 shrink-0 ${
+          multiLine ? 'flex h-[1.45em] items-center' : ''
+        }`}
+      >
         <svg
           stroke="currentColor"
           fill="currentColor"

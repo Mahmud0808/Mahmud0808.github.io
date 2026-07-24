@@ -19,9 +19,9 @@ const Cursor = ({ className = '' }: Props) => {
   const [isClicking, setIsClicking] = useState(false);
 
   useEffect(() => {
-    document.documentElement.style.cursor = 'none';
+    document.documentElement.classList.add('custom-cursor-active');
     return () => {
-      document.documentElement.style.cursor = '';
+      document.documentElement.classList.remove('custom-cursor-active');
     };
   }, []);
 
@@ -56,25 +56,24 @@ const Cursor = ({ className = '' }: Props) => {
     <div className={className}>
       {/* Ambient spotlight */}
       <m.div
-        className="fixed w-full h-[140%] z-10 pointer-events-none bg-torch"
-        style={{
-          left: mouseX,
-          top: mouseY,
-          translateX: '-50%',
-          translateY: '-50%',
-        }}
+        className="fixed left-0 top-0 w-full h-[140%] z-10 pointer-events-none bg-torch"
+        style={{ x: mouseX, y: mouseY }}
+        transformTemplate={(_, generated) =>
+          `translate(-50%, -50%) ${generated}`
+        }
       />
 
       {/* Ring with spring lag */}
       <m.div
-        className="fixed rounded-full pointer-events-none z-[9999]"
+        className="fixed left-0 top-0 rounded-full pointer-events-none z-[9999]"
         style={{
-          left: ringX,
-          top: ringY,
-          translateX: '-50%',
-          translateY: '-50%',
+          x: ringX,
+          y: ringY,
           border: '1.5px solid var(--color-accent)',
         }}
+        transformTemplate={(_, generated) =>
+          `translate(-50%, -50%) ${generated}`
+        }
         animate={{
           width: isHovering ? 44 : isClicking ? 20 : 30,
           height: isHovering ? 44 : isClicking ? 20 : 30,
@@ -86,13 +85,11 @@ const Cursor = ({ className = '' }: Props) => {
 
       {/* Precise dot */}
       <m.div
-        className="fixed rounded-full pointer-events-none z-[9999] bg-accent"
-        style={{
-          left: mouseX,
-          top: mouseY,
-          translateX: '-50%',
-          translateY: '-50%',
-        }}
+        className="fixed left-0 top-0 rounded-full pointer-events-none z-[9999] bg-accent"
+        style={{ x: mouseX, y: mouseY }}
+        transformTemplate={(_, generated) =>
+          `translate(-50%, -50%) ${generated}`
+        }
         animate={{
           width: isHovering ? 0 : isClicking ? 10 : 5,
           height: isHovering ? 0 : isClicking ? 10 : 5,

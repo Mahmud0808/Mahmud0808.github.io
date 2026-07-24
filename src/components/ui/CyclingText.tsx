@@ -17,7 +17,7 @@ type Props = {
  * Self-contained state so the parent does not re-render on every swap.
  *
  * The first item is shown statically (no entrance) until `startDelay`
- * elapses, then it blurs out and the cycle begins — so the very first
+ * elapses, then it blurs out and the cycle begins - so the very first
  * tagline also gets the vanish animation.
  */
 const CyclingText = ({

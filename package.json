@@ -12,8 +12,6 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@lottiefiles/react-lottie-player": "^3.6.0",
-    "@tailwindcss/line-clamp": "^0.4.4",
     "clsx": "^2.1.1",
     "framer-motion": "^9.1.7",
     "husky": "^8.0.3",

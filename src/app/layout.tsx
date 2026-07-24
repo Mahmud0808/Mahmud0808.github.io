@@ -75,12 +75,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`scroll-smooth ${fontVariables}`}
+      suppressHydrationWarning
+    >
       <head>
         <link rel="preload" href="/fonts/Agustina-Signature.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <script src="/scripts/no-flash.js" async />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(JSON.parse(localStorage.getItem('darkMode')||'true'))document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}})()`,
+          }}
+        />
       </head>
-      <body className={`text-text bg-bg ${fontVariables}`}>
+      <body className="text-text bg-bg">
         <ThemeProvider>
           <MotionProvider>
             <CursorLoader />

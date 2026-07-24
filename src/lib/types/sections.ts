@@ -33,7 +33,7 @@ export interface HeroSectionType extends HeroSection {
 }
 
 export interface AboutSectionType extends Section {
-  list: {
+  list?: {
     title: string;
     items: string[];
   };
@@ -44,7 +44,7 @@ export interface AboutSectionType extends Section {
 type SkillsType = {
   id: string;
   title: string;
-  lottie: {
+  lottie?: {
     light: string;
     dark: string;
   };

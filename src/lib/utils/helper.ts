@@ -23,6 +23,19 @@ export const getBreakpointsWidth = (breakpoint: BreakpointType) => {
 };
 
 /**
+ * Returns full years elapsed since the given start year
+ * @param startYear - Year the counter starts from
+ * @returns {Number} Whole years since startYear (minimum 1)
+ */
+
+export const getYearsSince = (startYear: number) => {
+  const years =
+    (Date.now() - new Date(startYear, 0, 1).getTime()) /
+    (365.25 * 24 * 60 * 60 * 1000);
+  return Math.max(1, Math.floor(years));
+};
+
+/**
  * Returns a unique id
  * @returns {String} Unique id format id123..
  */

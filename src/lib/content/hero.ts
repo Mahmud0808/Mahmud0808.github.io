@@ -1,25 +1,16 @@
 import { HeroSectionType } from '@/lib/types/sections';
-import { resumeFileName } from '@/lib/utils/config';
 
 export const heroSection: HeroSectionType = {
   subtitle: 'Hello, I’m',
   title: 'Mahmudul Hasan Khan',
   tagline: ['Mobile App Developer', 'Web Developer', 'Full Stack Developer'],
   description:
-    'I’m a Computer Science & Engineering graduate from Daffodil International University, with a focus on Mobile App and Web Development. I enjoy learning new skills and building interactive apps. I’m eager to grow and collaborate with others to turn ideas into reality.',
-  specialText:
-    'Currently available for job opportunities and freelance projects.',
+    'Software engineer from Dhaka. My Android apps have pulled in close to a million downloads, and my web work runs in production for real clients. I care about the details most people scroll past.',
+  specialText: 'Available for full-time roles & freelance projects',
   ctas: [
     {
-      title: 'View My Resume',
-      url: `/${resumeFileName}`,
-      hideInDesktop: true,
-      sameTab: false,
-    },
-    {
-      title: 'Check Out My Projects',
+      title: 'Check Out My Work',
       url: `/#projects`,
-      hideInMobile: true,
       sameTab: true,
     },
     {

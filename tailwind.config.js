@@ -6,8 +6,8 @@ module.exports = {
     extend: {
       fontFamily: {
         signature: ['agustina', 'sans-serif'],
-        sans: ['Inter', 'sans-serif'],
-        mono: ['Roboto Mono', 'monospace'],
+        sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
+        mono: ['var(--font-roboto-mono)', 'Roboto Mono', 'monospace'],
       },
       screens: {
         xs: '375px',
@@ -26,6 +26,11 @@ module.exports = {
       },
       transitionTimingFunction: {
         'in-scroll': 'cubic-bezier(0.645, 0.045, 0.355, 1)',
+      },
+      boxShadow: {
+        soft: '0 1px 2px rgba(15, 23, 42, 0.05), 0 8px 24px rgba(15, 23, 42, 0.05)',
+        'soft-lg':
+          '0 2px 4px rgba(15, 23, 42, 0.06), 0 16px 40px rgba(15, 23, 42, 0.08)',
       },
       gridTemplateColumns: {
         'auto-300': 'repeat(auto-fill, minmax(300px, 1fr))',
