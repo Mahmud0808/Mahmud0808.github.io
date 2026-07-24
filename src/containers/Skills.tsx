@@ -9,7 +9,7 @@ import SpotlightCard from '@/components/ui/SpotlightCard';
 
 import { getSectionAnimation } from '@/styles/animations';
 
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 
 const pick = (skills: SkillType[], names: string[]) =>
   names

@@ -1,7 +1,7 @@
 'use client';
 import { useTheme } from '@/lib/hooks/use-theme';
 
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 import { m, MotionProps } from 'framer-motion';
 
 interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {

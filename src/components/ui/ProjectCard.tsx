@@ -2,7 +2,7 @@
 import { ProjectType } from '@/lib/types';
 import { blurImageURL, prefix } from '@/lib/utils/config';
 
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 import { m, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import { MouseEvent, useRef } from 'react';

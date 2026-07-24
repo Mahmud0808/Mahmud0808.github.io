@@ -4,12 +4,15 @@ import {
   testimonialsSection,
 } from '@/lib/content/testimonials';
 
+import useWindowWidth from '@/lib/hooks/use-window-width';
+import { getBreakpointsWidth } from '@/lib/utils/helper';
+
 import { Wrapper } from '@/components';
 import SpotlightCard from '@/components/ui/SpotlightCard';
 
 import { getSectionAnimation } from '@/styles/animations';
 
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 import { CSSProperties, useEffect, useState } from 'react';
 
 const clientKey = (t: TestimonialType) => `${t.name}|${t.meta}`;
@@ -171,6 +174,11 @@ const Testimonials = () => {
   const { title, testimonials } = testimonialsSection;
   const [shuffled, setShuffled] = useState(testimonials);
 
+  const windowWidth = useWindowWidth();
+  const md = getBreakpointsWidth('md');
+  const showDesktop = windowWidth === 0 || windowWidth >= md;
+  const showMobile = windowWidth === 0 || windowWidth < md;
+
   useEffect(() => {
     setShuffled(constrainedShuffle(testimonials));
   }, [testimonials]);
@@ -196,14 +204,18 @@ const Testimonials = () => {
         <h2 className="heading-secondary !mb-0">{title}</h2>
       </div>
 
-      <div className="hidden md:block">
-        <MarqueeRow items={shuffled} repeatClients={repeatClients} />
-      </div>
+      {showDesktop && (
+        <div className="hidden md:block">
+          <MarqueeRow items={shuffled} repeatClients={repeatClients} />
+        </div>
+      )}
 
-      <div className="flex flex-col gap-4 md:hidden">
-        <MarqueeRow items={rowOne} repeatClients={repeatClients} />
-        <MarqueeRow items={rowTwo} repeatClients={repeatClients} reverse />
-      </div>
+      {showMobile && (
+        <div className="flex flex-col gap-4 md:hidden">
+          <MarqueeRow items={rowOne} repeatClients={repeatClients} />
+          <MarqueeRow items={rowTwo} repeatClients={repeatClients} reverse />
+        </div>
+      )}
     </Wrapper>
   );
 };

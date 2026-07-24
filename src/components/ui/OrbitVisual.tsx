@@ -1,7 +1,7 @@
 'use client';
 import { SkillType } from '@/lib/types';
 
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 import { CSSProperties } from 'react';
 
 type RingProps = {

@@ -27,8 +27,8 @@ const FigmaEditVisual = () => {
             <div className="h-[7px] w-[90%] rounded-full bg-current opacity-20" />
           </div>
 
-          <div className="absolute bottom-[12%] left-[8%] grid h-[14%] w-[30%] place-items-center rounded-full border border-accent/70 bg-accent/10">
-            <div className="h-[5px] w-[55%] rounded-full bg-accent/70" />
+          <div className="absolute bottom-[12%] left-[8%] grid h-[16%] w-[30%] place-items-center rounded-full border border-accent/70 bg-accent/10 dark:border-slate-700/80 dark:bg-slate-900/20">
+            <div className="h-[5px] w-[55%] rounded-full bg-accent/70 dark:bg-slate-700/0" />
           </div>
 
           <div className="absolute bottom-[12%] right-[8%] flex gap-1.5">

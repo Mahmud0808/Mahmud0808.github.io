@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils/helper';
 
 import SpotlightCard from '@/components/ui/SpotlightCard';
 
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 import { m, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';

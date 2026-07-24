@@ -108,6 +108,11 @@
 }
 
 @layer utilities {
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
+  }
+
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     @apply hidden;
@@ -447,21 +452,21 @@
 @keyframes figma-cursor {
   0%,
   26% {
-    left: 42%;
+    left: 40%;
     top: 48%;
   }
   33%,
   59% {
-    left: 86%;
+    left: 80%;
     top: 38%;
   }
   66%,
   92% {
     left: 34%;
-    top: 80%;
+    top: 83%;
   }
   100% {
-    left: 42%;
+    left: 40%;
     top: 48%;
   }
 }
@@ -576,8 +581,8 @@
   }
 
   .figma-cursor {
-    left: 42%;
-    top: 48%;
+    left: 50%;
+    top: 50%;
   }
 }
 

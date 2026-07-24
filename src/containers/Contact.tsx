@@ -5,7 +5,7 @@ import { Button, Wrapper } from '@/components';
 
 import { getSectionAnimation } from '@/styles/animations';
 
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 import { useEffect, useRef, useState } from 'react';
 
 const Contact = () => {

@@ -1,7 +1,7 @@
 import { SocialLinkType } from '@/lib/types';
 
 import SocialLink from './SocialLink';
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 
 const SocialIcon = ({ icon, url, name }: SocialLinkType) => {
   return (
