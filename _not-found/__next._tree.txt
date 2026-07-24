@@ -1,4 +1,4 @@
-:HL["/_next/static/chunks/0gxtf4980w0-c.css","style"]
+:HL["/_next/static/chunks/28axd-0273loh.css","style"]
 :HL["/_next/static/chunks/3l3ymb3joh7te.css","style"]
 :HL["/fonts/Agustina-Signature.woff2","font",{"crossOrigin":"anonymous","type":"font/woff2"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"U8b2rIPbfsD4tH5plpNjp"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"mzjFzjxhFVR7Tt4KTT6jV"}
