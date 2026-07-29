@@ -48,11 +48,9 @@ const Projects = () => {
 
   return (
     <Wrapper id="all-projects" animate={false} {...getSectionAnimation}>
-      <m.h2 className="heading-secondary text-center !mb-12">
-        {title}
-      </m.h2>
+      <m.h2 className="heading-secondary text-center !mb-12">{title}</m.h2>
       <div ref={wrapRef}>
-        <div className="grid gap-6 grid-cols-auto-250 xs:grid-cols-auto-300 place-items-center py-2">
+        <div className="flex flex-wrap items-stretch justify-center gap-6 py-2">
           {sortByYear(visibleProjects).map((project, i) => {
             if (i < PROJECTS_INITIALLY) {
               return (

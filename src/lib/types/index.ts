@@ -15,7 +15,6 @@ export type CTAType = {
   sameTab?: boolean;
 };
 
-// env
 export type ExperienceType = {
   role: string;
   company: string;
@@ -29,16 +28,18 @@ export type ProjectType = {
   id: string;
   name: string;
   subtitle?: string;
-  url: string;
+  url?: string;
   year: number;
   img: string;
-  repo: string;
+  repo?: string;
+  playstore?: string;
   projectSkills: SkillType[];
 };
 
 export interface FeaturedProjectType
-  extends Omit<ProjectType, 'year' | 'repo'> {
+  extends Omit<ProjectType, 'year' | 'repo' | 'url'> {
   description: string;
+  url: string;
   repo?: string;
   tasks?: string;
 }

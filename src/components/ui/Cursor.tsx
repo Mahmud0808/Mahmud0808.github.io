@@ -6,7 +6,8 @@ type Props = {
   className?: string;
 };
 
-const INTERACTIVE = 'a, button, [role="button"], input, textarea, label, select, [data-cursor="hover"]';
+const INTERACTIVE =
+  'a, button, [role="button"], input, textarea, label, select, [data-cursor="hover"]';
 
 const Cursor = ({ className = '' }: Props) => {
   const mouseX = useMotionValue(-1000);
@@ -56,7 +57,7 @@ const Cursor = ({ className = '' }: Props) => {
     <div className={className}>
       {/* Ambient spotlight */}
       <m.div
-        className="fixed left-0 top-0 w-full h-[140%] z-10 pointer-events-none bg-torch"
+        className="fixed left-0 top-0 w-full h-[140%] -z-10 pointer-events-none bg-torch"
         style={{ x: mouseX, y: mouseY }}
         transformTemplate={(_, generated) =>
           `translate(-50%, -50%) ${generated}`
@@ -77,7 +78,9 @@ const Cursor = ({ className = '' }: Props) => {
         animate={{
           width: isHovering ? 44 : isClicking ? 20 : 30,
           height: isHovering ? 44 : isClicking ? 20 : 30,
-          backgroundColor: isHovering ? 'rgba(14, 165, 233, 0.12)' : 'rgba(14, 165, 233, 0)',
+          backgroundColor: isHovering
+            ? 'rgba(14, 165, 233, 0.12)'
+            : 'rgba(14, 165, 233, 0)',
           opacity: isClicking ? 0.5 : 0.75,
         }}
         transition={{ type: 'spring', stiffness: 380, damping: 28 }}

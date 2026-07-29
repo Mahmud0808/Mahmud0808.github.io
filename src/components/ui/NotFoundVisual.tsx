@@ -6,9 +6,7 @@ const NotFoundVisual = () => {
       aria-hidden="true"
       className="relative mx-auto grid aspect-[4/3] w-full max-w-md select-none place-items-center overflow-hidden rounded-2xl border border-slate-900/10 bg-[radial-gradient(circle,rgba(100,116,139,0.12)_1px,transparent_1px)] [background-size:16px_16px] dark:border-slate-50/10"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,var(--panel-glow),transparent_70%)]"
-      />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,var(--panel-glow),transparent_70%)]" />
 
       <span className="absolute left-3 top-2 font-mono text-sm text-slate-400/60 dark:text-slate-500/50">
         +

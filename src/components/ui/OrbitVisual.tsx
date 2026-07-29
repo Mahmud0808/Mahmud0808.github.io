@@ -2,7 +2,7 @@
 import { SkillType } from '@/lib/types';
 
 import Icon from '@/components/ui/Icon';
-import { CSSProperties } from 'react';
+import { CSSProperties, ReactNode } from 'react';
 
 type RingProps = {
   items: SkillType[];
@@ -59,13 +59,22 @@ const Ring = ({ items, radius, duration, reverse = false }: RingProps) => {
   );
 };
 
+const Core = ({ children }: { children: ReactNode }) => (
+  <div className="core-pulse relative z-10 grid place-items-center rounded-full">
+    <span className="pointer-events-none absolute -inset-6 rounded-full bg-accent/12 blur-2xl" />
+    <div className="relative grid h-[84px] w-[84px] place-items-center rounded-full border border-slate-900/10 bg-bg-secondary/80 shadow-[0_8px_18px_-10px_rgba(0,0,0,.35)] backdrop-blur-sm dark:border-slate-50/10">
+      {children}
+    </div>
+  </div>
+);
+
 type Props = {
   inner: SkillType[];
   outer: SkillType[];
-  centerIcon?: string;
+  variant?: 'orbit' | 'device';
 };
 
-const OrbitVisual = ({ inner, outer, centerIcon = 'tabler:code' }: Props) => {
+const OrbitVisual = ({ inner, outer, variant = 'orbit' }: Props) => {
   return (
     <div
       aria-hidden="true"
@@ -73,9 +82,74 @@ const OrbitVisual = ({ inner, outer, centerIcon = 'tabler:code' }: Props) => {
     >
       <Ring items={outer} radius={150} duration={55} />
       <Ring items={inner} radius={88} duration={38} reverse />
-      <div className="core-pulse relative z-10 grid h-16 w-16 place-items-center rounded-full bg-gradient-to-br from-accent to-accent-variant text-white shadow-xl">
-        <Icon icon={centerIcon} width={30} height={30} />
-      </div>
+
+      <Core>
+        {variant === 'device' ? (
+          <svg
+            viewBox="0 0 48 48"
+            className="relative h-[40px] w-[40px] text-accent"
+          >
+            <defs>
+              <linearGradient id="orbit-tile" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stopColor="var(--color-accent)" />
+                <stop offset="100%" stopColor="var(--color-accent-variant)" />
+              </linearGradient>
+            </defs>
+            <rect
+              x="6"
+              y="6"
+              width="16"
+              height="16"
+              rx="5.5"
+              fill="currentColor"
+              opacity=".28"
+            />
+            <rect
+              x="26"
+              y="6"
+              width="16"
+              height="16"
+              rx="5.5"
+              fill="currentColor"
+              opacity=".45"
+            />
+            <rect
+              x="6"
+              y="26"
+              width="16"
+              height="16"
+              rx="5.5"
+              fill="currentColor"
+              opacity=".45"
+            />
+            <rect
+              x="26"
+              y="26"
+              width="16"
+              height="16"
+              rx="5.5"
+              fill="url(#orbit-tile)"
+            />
+          </svg>
+        ) : (
+          <svg
+            viewBox="0 0 48 48"
+            className="relative h-[40px] w-[40px] text-accent"
+          >
+            <defs>
+              <linearGradient id="orbit-slab" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="var(--color-accent)" />
+                <stop offset="100%" stopColor="var(--color-accent-variant)" />
+              </linearGradient>
+            </defs>
+            <g fill="currentColor">
+              <path d="M24 4 44 13 24 22 4 13z" opacity=".3" />
+              <path d="M24 17 44 26 24 35 4 26z" opacity=".5" />
+            </g>
+            <path d="M24 30 44 39 24 48 4 39z" fill="url(#orbit-slab)" />
+          </svg>
+        )}
+      </Core>
     </div>
   );
 };

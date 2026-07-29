@@ -53,18 +53,12 @@ const Skills = () => {
     {
       skill: mobile,
       visual: (
-        <OrbitVisual
-          inner={mobileInner}
-          outer={mobileOuter}
-          centerIcon="tabler:device-mobile"
-        />
+        <OrbitVisual inner={mobileInner} outer={mobileOuter} variant="device" />
       ),
     },
     {
       skill: web,
-      visual: (
-        <OrbitVisual inner={webInner} outer={webOuter} centerIcon="tabler:code" />
-      ),
+      visual: <OrbitVisual inner={webInner} outer={webOuter} />,
     },
     { skill: design, visual: <FigmaEditVisual /> },
   ];
@@ -107,7 +101,12 @@ const Skills = () => {
                       key={name}
                       className="flex items-center gap-1.5 rounded-full border border-slate-900/10 px-3 py-1.5 font-mono text-xs capitalize text-text duration-200 hover:border-accent/50 hover:text-accent dark:border-slate-50/10"
                     >
-                      <Icon icon={icon} width={14} height={14} aria-hidden="true" />
+                      <Icon
+                        icon={icon}
+                        width={14}
+                        height={14}
+                        aria-hidden="true"
+                      />
                       {name}
                     </li>
                   ))}

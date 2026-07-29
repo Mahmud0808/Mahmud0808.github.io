@@ -77,18 +77,30 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`scroll-smooth ${fontVariables}`}
+      className={`scroll-smooth bg-bg ${fontVariables}`}
       suppressHydrationWarning
     >
       <head>
-        <link rel="preload" href="/fonts/Agustina-Signature.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          href="/fonts/Agustina-Signature.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preconnect"
+          href="https://api.iconify.design"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://api.iconify.design" />
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{if(JSON.parse(localStorage.getItem('darkMode')||'true'))document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}})()`,
           }}
         />
       </head>
-      <body className="text-text bg-bg">
+      <body className="text-text">
         <ThemeProvider>
           <MotionProvider>
             <CursorLoader />
