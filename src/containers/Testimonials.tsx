@@ -94,7 +94,7 @@ const constrainedShuffle = (items: TestimonialType[]) => {
 };
 
 const Stars = () => (
-  <div className="flex gap-1 text-accent" aria-label="5 out of 5 stars">
+  <div className="flex gap-1 text-accent" role="img" aria-label="5 out of 5 stars">
     {Array.from({ length: 5 }, (_, i) => (
       <Icon key={i} icon="tabler:star-filled" width={13} height={13} />
     ))}
