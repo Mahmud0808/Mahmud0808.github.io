@@ -8,6 +8,37 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'Depthly',
+      subtitle:
+        'Live wallpaper that puts the depth effect on Android. The subject is cut out of your photo on the device itself, then the clock is composited behind it, so the person overlaps the numbers.',
+      playstore:
+        'https://play.google.com/store/apps/details?id=com.drdisagree.depthly',
+      img: '/images/projects/depthly.webp',
+      year: 2026,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+        { name: 'Jetpack Compose', icon: 'devicon:jetpackcompose' },
+        { name: 'ONNX Runtime', icon: 'simple-icons:onnx' },
+        { name: 'Room', icon: 'vscode-icons:file-type-sqlite' },
+      ],
+    },
+    {
+      id: getId(),
+      name: 'Thestral Vault',
+      subtitle:
+        'Royalty ledger for a figure studio. Artists and character owners type a four-digit ID to see what they are owed, admins log prints and settle balances, and every payment can be reversed without losing the trail behind it.',
+      img: '/images/projects/thestral-vault.webp',
+      year: 2026,
+      projectSkills: [
+        { name: 'React', icon: 'vscode-icons:file-type-reactjs' },
+        { name: 'Vite', icon: 'vscode-icons:file-type-vite' },
+        { name: 'Tailwind CSS', icon: 'vscode-icons:file-type-tailwind' },
+        { name: 'Supabase', icon: 'logos:supabase-icon' },
+        { name: 'Vercel', icon: 'logos:vercel-icon' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'Dev Cleaner',
       subtitle:
         'Desktop app that clears build output, caches and dependency folders off your disk. A folder is only ever listed when a project marker file sits above it, so nothing outside a real project is a candidate, and nothing is deleted until you check it.',
