@@ -24,7 +24,7 @@ export const seoData = {
   description:
     'Software engineer from Dhaka. Android apps with nearly a million downloads, plus full-stack web products built with Next.js, React and Node.js.',
   author: author.name,
-  image: 'https://i.postimg.cc/25zdR8ny/Mahmudul-Hasan-Khan-Portfolio.png',
+  image: 'https://mahmud0808.github.io/images/og.png',
   url: 'https://mahmud0808.github.io',
   keywords: [
     'Mahmud',

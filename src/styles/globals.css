@@ -108,6 +108,11 @@
 }
 
 @layer utilities {
+  .cv-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 700px;
+  }
+
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {
     @apply hidden;
@@ -321,6 +326,58 @@
   }
 }
 
+/* MARQUEE */
+
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 8%,
+    black 92%,
+    transparent
+  );
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee var(--marquee-duration, 60s) linear infinite;
+}
+
+.marquee-track.reverse {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}
+
 /* ANIMATED UNDERLINE */
 
 .link-sweep {
@@ -395,21 +452,21 @@
 @keyframes figma-cursor {
   0%,
   26% {
-    left: 42%;
+    left: 40%;
     top: 48%;
   }
   33%,
   59% {
-    left: 86%;
+    left: 80%;
     top: 38%;
   }
   66%,
   92% {
     left: 34%;
-    top: 80%;
+    top: 83%;
   }
   100% {
-    left: 42%;
+    left: 40%;
     top: 48%;
   }
 }
@@ -524,8 +581,8 @@
   }
 
   .figma-cursor {
-    left: 42%;
-    top: 48%;
+    left: 50%;
+    top: 50%;
   }
 }
 

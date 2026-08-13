@@ -48,10 +48,7 @@ const StaggeredText = ({
   animateIn = true,
   className = '',
 }: Props) => {
-  const segments = useMemo(
-    () => splitText(text, segmentBy),
-    [text, segmentBy]
-  );
+  const segments = useMemo(() => splitText(text, segmentBy), [text, segmentBy]);
   const step = delay / 1000; // ms -> s
   const blurAmount = blur ? 'blur(8px)' : 'blur(0px)';
 

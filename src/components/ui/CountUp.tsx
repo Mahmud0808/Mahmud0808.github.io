@@ -52,11 +52,8 @@ const CountUp = ({ to, suffix = '', duration = 1400 }: Props) => {
   const final = `${formatNumber(to)}${suffix}`;
 
   return (
-    <span
-      ref={ref}
-      aria-label={final}
-      className="relative inline-block tabular-nums"
-    >
+    <span ref={ref} className="relative inline-block tabular-nums">
+      <span className="sr-only">{final}</span>
       <span aria-hidden="true" className="invisible">
         {final}
       </span>

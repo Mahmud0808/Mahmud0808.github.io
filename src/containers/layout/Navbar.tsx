@@ -103,6 +103,7 @@ const Navbar = () => {
     const sectionIds = navLinks.map(({ url }) => url.replace('/#', ''));
     const extraMappings: Record<string, string> = {
       'all-projects': 'projects',
+      testimonials: 'projects',
     };
     const lastSectionId = sectionIds[sectionIds.length - 1];
     const allIds = [...sectionIds, ...Object.keys(extraMappings)];
@@ -246,7 +247,7 @@ const Navbar = () => {
                   })}
                   initial="hidden"
                   animate="show"
-                  className="border-[2px] bg-transparent hover:bg-sky-500/10 dark:hover:bg-sky-400/10"
+                  className="border-[2px] !bg-transparent hover:!bg-sky-500/10 dark:hover:!bg-sky-400/10"
                 >
                   {cta.title}
                 </Button>

@@ -17,12 +17,18 @@ const Wrapper = ({
   animate = true,
   ...rest
 }: Props & MotionProps) => {
-  const MotionTag = useMemo(() => m[as as keyof typeof m] as React.ElementType, [as]);
+  const MotionTag = useMemo(
+    () => m[as as keyof typeof m] as React.ElementType,
+    [as]
+  );
+  const skipContentVisibility = !id || id === 'hero' || id === 'about';
+  const baseClassName = `py-24 md:py-32 ${
+    skipContentVisibility ? '' : 'cv-auto '
+  }${className}`;
 
   if (animate) {
-
     return (
-      <MotionTag id={id} className={`py-24 md:py-32 ${className}`} {...rest}>
+      <MotionTag id={id} className={baseClassName} {...rest}>
         {children}
       </MotionTag>
     );
@@ -30,11 +36,7 @@ const Wrapper = ({
 
   if (as === 'section') {
     return (
-      <m.section
-        id={id}
-        className={`py-24 md:py-32 ${className}`}
-        {...rest}
-      >
+      <m.section id={id} className={baseClassName} {...rest}>
         {children}
       </m.section>
     );
@@ -43,7 +45,7 @@ const Wrapper = ({
   const CustomTag = `${as}` as ElementType;
 
   return (
-    <CustomTag id={id} className={`py-24 md:py-32 ${className}`} {...rest}>
+    <CustomTag id={id} className={baseClassName} {...rest}>
       {children}
     </CustomTag>
   );

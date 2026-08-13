@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils/helper';
 
 import SpotlightCard from '@/components/ui/SpotlightCard';
 
-import { Icon } from '@iconify/react';
+import Icon from '@/components/ui/Icon';
 import { m, MotionProps } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -25,7 +25,7 @@ const FeaturedProject = ({
   ...rest
 }: Props) => {
   return (
-    <m.div {...rest}>
+    <m.div {...rest} className="relative z-40">
       <SpotlightCard className="overflow-hidden rounded-2xl border border-slate-900/10 bg-white/60 backdrop-blur-sm shadow-soft dark:bg-transparent dark:border-slate-50/10 dark:shadow-2xl">
         <article
           className={cn(
@@ -42,16 +42,13 @@ const FeaturedProject = ({
           >
             <Image
               src={img}
-              alt={`Screenshot of ${name}`}
-              width={720}
-              height={480}
-              className="aspect-video h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none lg:aspect-auto"
+              alt={`${name} project banner`}
+              width={1200}
+              height={675}
+              sizes="(max-width: 1023px) 100vw, 55vw"
+              className="aspect-video h-full w-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none lg:aspect-auto"
               placeholder="blur"
               blurDataURL={blurImageURL}
-            />
-            <div
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100"
             />
           </Link>
 

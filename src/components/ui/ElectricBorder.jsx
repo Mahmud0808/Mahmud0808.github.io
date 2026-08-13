@@ -229,6 +229,15 @@ const ElectricBorder = ({
       return color;
     };
 
+    let strokeColor = resolveColor();
+    const themeObserver = new MutationObserver(() => {
+      strokeColor = resolveColor();
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+
     const drawElectricBorder = (currentTime) => {
       if (!canvas || !ctx) return;
 
@@ -248,7 +257,7 @@ const ElectricBorder = ({
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.scale(dpr, dpr);
 
-      ctx.strokeStyle = resolveColor();
+      ctx.strokeStyle = strokeColor;
       ctx.lineWidth = thickness;
       ctx.lineCap = 'round';
       ctx.lineJoin = 'round';
@@ -326,13 +335,33 @@ const ElectricBorder = ({
     });
     resizeObserver.observe(container);
 
-    animationRef.current = requestAnimationFrame(drawElectricBorder);
+    let isVisible = false;
+    const visibilityObserver = new IntersectionObserver(([entry]) => {
+      const wasVisible = isVisible;
+      isVisible = entry.isIntersecting;
+      if (isVisible && !wasVisible) {
+        // Re-measure on entry: the container may have been measured while
+        // an ancestor was skipped by content-visibility, giving a wrong size.
+        const newSize = updateSize();
+        width = newSize.width;
+        height = newSize.height;
+        lastFrameTimeRef.current = performance.now();
+        animationRef.current = requestAnimationFrame(drawElectricBorder);
+      }
+      if (!isVisible && animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+    });
+    visibilityObserver.observe(container);
 
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current);
       }
       resizeObserver.disconnect();
+      visibilityObserver.disconnect();
+      themeObserver.disconnect();
     };
   }, [
     color,

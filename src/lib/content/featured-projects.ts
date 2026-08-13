@@ -8,7 +8,7 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
       name: 'Iconify',
       description: 'Open-source Android theming application.',
       tasks:
-        'Iconify gives Android 12+ owners full control of their system look - icons, colors, shapes, even the notification panel. No two setups end up alike.',
+        'Built on Runtime Resource Overlays and Xposed hooks to restyle system UI without repacking OEM firmware - shipped across wildly fragmented Android ROMs with 500K+ downloads.',
       url: 'https://github.com/Mahmud0808/Iconify',
       img: '/images/projects/iconify.webp',
       projectSkills: [
@@ -23,7 +23,7 @@ const featuredProjectsSection: FeaturedProjectsSectionType = {
       name: 'ColorBlendr',
       description: 'Material You color control for Android 12+.',
       tasks:
-        'ColorBlendr rewires Material You theming on Android 12+. Tweak accent colors, background saturation and more - straight from one clean interface.',
+        'Drives Android’s Material You theming engine directly over AIDL through a privileged system service, applying live palette changes without a reboot - 200K+ downloads.',
       url: 'https://github.com/Mahmud0808/ColorBlendr',
       img: '/images/projects/colorblendr.webp',
       projectSkills: [

@@ -12,7 +12,7 @@ const Experience = () => {
   return (
     <m.section
       id="experience"
-      className="max-w-3xl py-32 mx-auto"
+      className="cv-auto max-w-3xl py-32 mx-auto"
       {...getSectionAnimation}
     >
       <h2 className="heading-secondary">{title}</h2>
