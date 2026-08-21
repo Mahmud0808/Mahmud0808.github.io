@@ -8,6 +8,23 @@ export const projectsSection: ProjectsSectionType = {
   projects: [
     {
       id: getId(),
+      name: 'TeleDrive',
+      subtitle:
+        'Turns a private Telegram channel on your own account into a drive, with no server in between. Files are sealed with AES-256-GCM before they leave the device, and a wiped phone rebuilds the whole tree from the message captions.',
+      repo: 'https://github.com/Mahmud0808/TeleDrive',
+      img: '/images/projects/teledrive.webp',
+      year: 2026,
+      projectSkills: [
+        { name: 'Kotlin', icon: 'vscode-icons:file-type-kotlin' },
+        { name: 'Jetpack Compose', icon: 'devicon:jetpackcompose' },
+        { name: 'TDLib', icon: 'logos:telegram' },
+        { name: 'Room', icon: 'vscode-icons:file-type-sqlite' },
+        { name: 'WorkManager', icon: 'logos:android-icon' },
+        { name: 'AES-256-GCM', icon: 'material-symbols:encrypted' },
+      ],
+    },
+    {
+      id: getId(),
       name: 'Depthly',
       subtitle:
         'Live wallpaper that puts the depth effect on Android. The subject is cut out of your photo on the device itself, then the clock is composited behind it, so the person overlaps the numbers.',
