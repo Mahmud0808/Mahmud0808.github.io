@@ -45,9 +45,11 @@ const ThemeControls = () => {
   const dark = useSyncExternalStore(subscribe, readDark, () => true);
 
   const pickHue = (value: number) => {
-    document.documentElement.style.setProperty('--h', String(value));
+    withTransition(() => {
+      document.documentElement.style.setProperty('--h', String(value));
+      window.dispatchEvent(new Event(CHANGE));
+    });
     save('accent', String(value));
-    window.dispatchEvent(new Event(CHANGE));
     syncThemeColor();
   };
 

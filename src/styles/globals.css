@@ -1,9 +1,3 @@
-@property --h {
-  syntax: '<number>';
-  inherits: true;
-  initial-value: 215;
-}
-
 @view-transition {
   navigation: auto;
 }
@@ -55,12 +49,6 @@
   :root[data-theme] {
     --ink-2: var(--ink);
     --rule: color-mix(in oklch, var(--ink) 50%, var(--paper));
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  :root {
-    transition: --h 0.5s var(--ease-out);
   }
 }
 
@@ -1334,7 +1322,8 @@ section {
 
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 0.3s;
+  animation-duration: 0.45s;
+  animation-timing-function: var(--ease-out);
 }
 
 .contact {
