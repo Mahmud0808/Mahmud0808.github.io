@@ -1,39 +1,89 @@
-import { Hero, Layout } from '@/containers';
-import dynamic from 'next/dynamic';
+import {
+  author,
+  fiverrProfile,
+  seo,
+  siteUrl,
+  socialLinks,
+} from '@/lib/content/portfolio';
+import { disciplines } from '@/lib/content/skills';
 
-import type { Metadata } from 'next';
-import type { NextPage } from 'next';
+import SectionNav from '@/components/SectionNav';
+import About from '@/containers/About';
+import Contact from '@/containers/Contact';
+import Experience from '@/containers/Experience';
+import Hero from '@/containers/Hero';
+import Skills from '@/containers/Skills';
+import Testimonials from '@/containers/Testimonials';
+import Work from '@/containers/Work';
 
-const About = dynamic(() => import('@/containers/About'));
-const Skills = dynamic(() => import('@/containers/Skills'));
-const Experience = dynamic(() => import('@/containers/Experience'));
-const FeaturedProjects = dynamic(() => import('@/containers/FeaturedProjects'));
-const Projects = dynamic(() => import('@/containers/Projects'));
-const Testimonials = dynamic(() => import('@/containers/Testimonials'));
-const Contact = dynamic(() => import('@/containers/Contact'));
+const personId = `${siteUrl}/#person`;
 
-export const metadata: Metadata = {
-  robots: { index: true, follow: true },
-  other: {
-    "google-site-verification": "tuEELxkE7zuw6YSzuesy_71LuYE_C22T0qurgD-mFFg",
-  },
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}/#website`,
+      url: `${siteUrl}/`,
+      name: author.name,
+      inLanguage: 'en',
+      publisher: { '@id': personId },
+    },
+    {
+      '@type': 'ProfilePage',
+      '@id': `${siteUrl}/#profile`,
+      url: `${siteUrl}/`,
+      name: seo.title,
+      description: seo.description,
+      inLanguage: 'en',
+      isPartOf: { '@id': `${siteUrl}/#website` },
+      mainEntity: { '@id': personId },
+    },
+    {
+      '@type': 'Person',
+      '@id': personId,
+      name: author.name,
+      alternateName: seo.alternateNames,
+      givenName: 'Mahmudul Hasan',
+      familyName: 'Khan',
+      jobTitle: author.jobTitle,
+      description: seo.description,
+      url: `${siteUrl}/`,
+      image: `${siteUrl}/opengraph-image.png`,
+      email: `mailto:${author.email}`,
+      homeLocation: {
+        '@type': 'Place',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: author.city,
+          addressCountry: author.countryCode,
+        },
+      },
+      knowsAbout: [...new Set(disciplines.flatMap((d) => d.stack))],
+      sameAs: [...socialLinks.map((link) => link.href), fiverrProfile],
+    },
+  ],
 };
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <>
-      <Layout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+        }}
+      />
+      <SectionNav />
+      <main id="main">
         <Hero />
         <About />
         <Skills />
         <Experience />
-        <FeaturedProjects />
-        <Projects />
+        <Work />
         <Testimonials />
         <Contact />
-      </Layout>
+      </main>
     </>
   );
-};
-
-export default Home;
+}

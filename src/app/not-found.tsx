@@ -1,18 +1,19 @@
-import { Button } from '@/components';
-import NotFoundVisual from '@/components/ui/NotFoundVisual';
+import type { Metadata } from 'next';
+import Link from 'next/link';
 
-const NotFound = () => {
-  return (
-    <main className="grid min-h-svh place-items-center px-6">
-      <div className="w-full max-w-xl text-center">
-        <NotFoundVisual />
-
-        <Button type="link" href="/" size="lg" className="mt-16" sameTab center>
-          go home
-        </Button>
-      </div>
-    </main>
-  );
+export const metadata: Metadata = {
+  title: 'Page not found',
+  robots: { index: false },
 };
 
-export default NotFound;
+export default function NotFound() {
+  return (
+    <main id="main" className="lost">
+      <h1>404</h1>
+      <p>This page doesn’t exist. It may have moved, or the link has a typo.</p>
+      <Link className="btn primary" href="/">
+        Back to the home page
+      </Link>
+    </main>
+  );
+}

@@ -1,73 +1,69 @@
-import { seoData } from '@/lib/content/portfolio';
-import ThemeProvider from '@/lib/hooks/use-theme';
+import type { Metadata, Viewport } from 'next';
+
+import { author, seo, siteUrl } from '@/lib/content/portfolio';
 import fontVariables from '@/lib/utils/fonts';
 
-import CursorLoader from '@/components/ui/CursorLoader';
-import MotionProvider from '@/components/ui/MotionProvider';
+import Footer from '@/containers/layout/Footer';
+import Header from '@/containers/layout/Header';
 
-import '../styles/globals.css';
-import type { Metadata } from 'next';
+import '@/styles/_generated/display-font.css';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
-  title: seoData.title,
-  authors: [
-    {
-      name: seoData.author,
-    },
-  ],
-  description: seoData.description,
-  keywords: seoData.keywords.join(','),
-  metadataBase: new URL(seoData.url),
-  alternates: {
-    canonical: seoData.url,
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: seo.title,
+    template: `%s · ${author.name}`,
   },
+  description: seo.description,
+  authors: [{ name: author.name, url: siteUrl }],
+  creator: author.name,
+  alternates: { canonical: '/' },
   openGraph: {
-    type: 'website',
-    url: seoData.url,
-    title: seoData.title,
-    description: seoData.description,
-    images: seoData.image,
-    siteName: seoData.title,
+    type: 'profile',
+    url: '/',
+    siteName: author.name,
+    locale: 'en_US',
+    title: seo.title,
+    description: seo.description,
+    firstName: 'Mahmudul Hasan',
+    lastName: 'Khan',
   },
   twitter: {
     card: 'summary_large_image',
-    title: seoData.title,
-    description: seoData.description,
-    images: seoData.image,
-    site: seoData.url,
+    title: seo.title,
+    description: seo.description,
+    creator: '@DrDisagree',
   },
-  icons: [
-    {
-      rel: 'apple-touch-icon',
-      sizes: '120x120',
-      url: '/favicons/apple-touch-icon.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '512x512',
-      url: '/favicons/android-chrome-512x512.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '192x192',
-      url: '/favicons/android-chrome-192x192.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '32x32',
-      url: '/favicons/favicon-32x32.png',
-    },
-    {
-      rel: 'icon',
-      type: 'image/png',
-      sizes: '16x16',
-      url: '/favicons/favicon-16x16.png',
-    },
+  keywords: [
+    author.name,
+    ...seo.alternateNames,
+    'Android developer',
+    'Full-stack developer',
+    'Dhaka',
   ],
+  applicationName: author.name,
+  category: 'technology',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: { google: 'tuEELxkE7zuw6YSzuesy_71LuYE_C22T0qurgD-mFFg' },
+  formatDetection: { telephone: false },
 };
+
+export const viewport: Viewport = {
+  themeColor: '#051316',
+  colorScheme: 'dark light',
+};
+
+const themeBootstrap = `(function(){try{var d=document.documentElement,t=localStorage.getItem('theme'),h=localStorage.getItem('accent');if(t==='light')d.dataset.theme=t;if(h&&/^\\d{1,3}$/.test(h))d.style.setProperty('--h',h)}catch(e){}})()`;
 
 export default function RootLayout({
   children,
@@ -75,38 +71,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang="en"
-      className={`scroll-smooth bg-bg ${fontVariables}`}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={fontVariables} suppressHydrationWarning>
       <head>
-        <link
-          rel="preload"
-          href="/fonts/Agustina-Signature.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preconnect"
-          href="https://api.iconify.design"
-          crossOrigin="anonymous"
-        />
-        <link rel="dns-prefetch" href="https://api.iconify.design" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(JSON.parse(localStorage.getItem('darkMode')||'true'))document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}})()`,
-          }}
-        />
+        <script dangerouslySetInnerHTML={{ __html: themeBootstrap }} />
       </head>
-      <body className="text-text">
-        <ThemeProvider>
-          <MotionProvider>
-            <CursorLoader />
-            {children}
-          </MotionProvider>
-        </ThemeProvider>
+      <body>
+        <a className="skip" href="#main">
+          Skip to content
+        </a>
+        <div className="site">
+          <Header />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

@@ -1,55 +1,62 @@
-export type NavLinkType = {
-  name: string;
-  url: string;
+export type LinkKind = 'github' | 'playstore' | 'live';
+
+export type ProjectLink = {
+  kind: LinkKind;
+  href: string;
 };
 
-export type SocialLinkType = {
-  icon: string;
-  url: string;
+export type Platform = 'mobile' | 'web' | 'other';
+
+export type Project = {
+  id: string;
   name: string;
+  description: string;
+  year: number;
+  img: string;
+  platform: Platform;
+  stack: string[];
+  links: ProjectLink[];
 };
 
-export type CTAType = {
+export type FeaturedProject = {
+  id: string;
+  name: string;
+  figure: string;
+  description: string;
+  img: string;
+  stack: string[];
+  links: ProjectLink[];
+};
+
+export type Role = {
   title: string;
-  url: string;
-  sameTab?: boolean;
-};
-
-export type ExperienceType = {
-  role: string;
-  company: string;
-  companyUrl: string;
-  started: Date | string;
-  upto: Date | 'present' | string;
+  org: string;
+  orgUrl?: string;
+  meta: string;
+  start: string;
   tasks: string[];
 };
 
-export type ProjectType = {
-  id: string;
-  name: string;
-  subtitle?: string;
-  url?: string;
-  year: number;
-  img: string;
-  repo?: string;
-  playstore?: string;
-  projectSkills: SkillType[];
-};
-
-export interface FeaturedProjectType
-  extends Omit<ProjectType, 'year' | 'repo' | 'url'> {
+export type Discipline = {
+  title: string;
   description: string;
-  url: string;
-  repo?: string;
-  tasks?: string;
-}
-
-export type StringKeyValueType = {
-  [link: string]: string;
+  stack: string[];
 };
 
-export type Direction = 'up' | 'right' | 'down' | 'left';
+export type Review = {
+  client: string;
+  source: string;
+  country: string;
+  quote: string;
+};
 
-export type SkillType = { name: string; icon: string };
+export type Fact = {
+  label: string;
+  value: string;
+  abbr?: { text: string; title: string };
+};
 
-export type BreakpointType = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+export type SocialLink = {
+  name: 'GitHub' | 'LinkedIn' | 'X (Twitter)' | 'Instagram' | 'Facebook';
+  href: string;
+};

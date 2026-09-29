@@ -38,3 +38,13 @@ next-env.d.ts
 
 # ignore package-lock if generated (project uses yarn, not npm)
 package-lock.json
+
+# md files
+*.md
+!README.md
+
+# generated images
+/public/images/_generated/
+/src/assets/_generated/
+/.lighthouseci/
+/src/styles/_generated/
