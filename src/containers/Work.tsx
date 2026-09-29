@@ -5,6 +5,7 @@ import { githubRepos } from '@/lib/content/portfolio';
 import { projects } from '@/lib/content/projects';
 import { sortByYear } from '@/lib/utils/helper';
 
+import { NewTab } from '@/components/Icons';
 import ProjectGallery from '@/components/ProjectGallery';
 import TechStack from '@/components/TechStack';
 import WithAbbr from '@/components/WithAbbr';
@@ -14,7 +15,7 @@ const Work = () => (
     <div className="section-head">
       <h2 id="work-h">Selected work</h2>
       <a href={githubRepos} target="_blank" rel="noopener noreferrer">
-        All projects on GitHub ↗
+        All projects on GitHub <NewTab />
       </a>
     </div>
     <div className="featured">
@@ -55,7 +56,7 @@ const Work = () => (
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Source on GitHub ↗
+                    Source on GitHub <NewTab />
                   </a>
                 </p>
               )}

@@ -7,6 +7,7 @@ import {
 } from '@/lib/content/testimonials';
 import { Review } from '@/lib/types';
 
+import { NewTab } from '@/components/Icons';
 import ShowMore from '@/components/ShowMore';
 
 const ReviewCard = ({
@@ -56,7 +57,7 @@ const Testimonials = () => {
       <div className="section-head">
         <h2 id="testimonials-h">What people say</h2>
         <a href={fiverrProfile} target="_blank" rel="noopener noreferrer">
-          All reviews on Fiverr ↗
+          All reviews on Fiverr <NewTab />
         </a>
       </div>
       <div className="words">

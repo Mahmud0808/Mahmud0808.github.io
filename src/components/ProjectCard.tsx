@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import { LinkKind, Project } from '@/lib/types';
 
+import { ExternalIcon } from './Icons';
+
 const linkLabels: Record<LinkKind, string> = {
   live: 'Live',
   playstore: 'Play Store',
@@ -64,9 +66,9 @@ const ProjectCard = ({
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${project.name} on ${linkLabels[link.kind]}`}
+              aria-label={`${project.name} on ${linkLabels[link.kind]} (opens in new tab)`}
             >
-              {linkLabels[link.kind]} ↗
+              {linkLabels[link.kind]} <ExternalIcon />
             </a>
           ))}
         </p>

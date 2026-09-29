@@ -189,6 +189,20 @@ abbr[title] {
   cursor: help;
 }
 
+.ext {
+  display: inline-block;
+  width: 0.85em;
+  height: 0.85em;
+  margin-left: 0.3em;
+  vertical-align: -0.08em;
+  flex: none;
+  transition: translate 0.2s var(--ease-out);
+}
+
+a:hover .ext {
+  translate: 1px -1px;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1084,6 +1098,7 @@ section {
 }
 
 .contact {
+  container-type: inline-size;
   --ink: var(--on-accent);
   --ink-2: color-mix(in oklch, var(--on-accent) 82%, var(--accent));
   --rule: color-mix(in oklch, var(--on-accent) 40%, var(--accent));
@@ -1127,9 +1142,10 @@ section {
   font-weight: 800;
   text-transform: uppercase;
   font-size: clamp(1.6rem, 6vw, 4.5rem);
+  font-size: min(calc(100cqi / 12.3), 4.5rem);
   line-height: 1;
   letter-spacing: 0.01em;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
   color: var(--ink);
   text-decoration-color: var(--rule);
   text-decoration-thickness: 3px;
