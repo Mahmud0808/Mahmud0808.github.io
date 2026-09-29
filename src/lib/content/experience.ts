@@ -1,46 +1,39 @@
-import { ExperienceSectionType } from '@/lib/types/sections';
+import { Role } from '@/lib/types';
 
-export const experienceSection: ExperienceSectionType = {
-  title: 'experience',
-  experiences: [
-    {
-      company: 'International Software Team',
-      companyUrl: '',
-      role: 'Senior Mobile & Web Developer (Contract)',
-      started: 'april 2025',
-      upto: 'present',
-      tasks: [
-        'Work remotely with a distributed team, shipping several production apps under contract.',
-        'Turned existing websites into full mobile app experiences across different industries.',
-        'Wrote 2D games from scratch - custom physics and gameplay mechanics included.',
-        'Built the internal web platform the team uses to manage and monitor its production pipeline.',
-        'Started junior, now senior. I own architecture decisions, feature planning and technical direction.',
-      ],
-    },
-    {
-      company: 'Fiverr',
-      companyUrl: 'https://www.fiverr.com/drdisagree',
-      role: 'Self-employed | Full Stack Developer',
-      started: 'march 2025',
-      upto: 'present',
-      tasks: [
-        'Built a vehicle catalog app for a popular combat game - 10K+ downloads, 200+ five-star ratings.',
-        'Developed a full-stack job portal with Spring Boot, Java, Firebase and PostgreSQL.',
-        'Made a family networking app with family tree visualization and private sharing.',
-        'Most of my clients come back for the next project. That’s the metric I care about.',
-      ],
-    },
-    {
-      company: 'GitHub',
-      companyUrl:
-        'https://github.com/Mahmud0808?tab=overview#activities--stats',
-      role: 'open-source contributor',
-      started: 'april 2023',
-      upto: 'present',
-      tasks: [
-        'Migrated MRT Buddy - the Dhaka MRT Pass companion app - from Material Design 2 to 3 and added dynamic color support.',
-        'Fix bugs, add features and review code across a range of open-source projects.',
-      ],
-    },
-  ],
-};
+export const roles: Role[] = [
+  {
+    title: 'Senior Mobile & Web Developer',
+    org: 'Freelance developer team',
+    meta: 'Remote',
+    start: '2025-04',
+    tasks: [
+      'Ship several production apps with a distributed team.',
+      'Turned existing websites into full mobile apps across different industries.',
+      'Wrote 2D games from scratch, including custom physics and gameplay.',
+      'Started as a junior; now own architecture, feature planning and technical direction.',
+    ],
+  },
+  {
+    title: 'Full-Stack Developer',
+    org: 'Fiverr',
+    orgUrl: 'https://www.fiverr.com/drdisagree',
+    meta: 'Self-employed',
+    start: '2025-03',
+    tasks: [
+      'Built a vehicle catalogue app for a popular combat game: 10K+ downloads, 200+ five-star ratings.',
+      'Developed a job portal with Spring Boot, Firebase and PostgreSQL.',
+      'Made a family networking app with an interactive family tree and private sharing.',
+    ],
+  },
+  {
+    title: 'Open-source contributor',
+    org: 'GitHub',
+    orgUrl: 'https://github.com/Mahmud0808',
+    meta: 'Open source',
+    start: '2023-04',
+    tasks: [
+      'Migrated MRT Buddy, the Dhaka MRT Pass companion app, from Material Design 2 to 3 with dynamic colour.',
+      'Fix bugs, add features and review code across open-source projects.',
+    ],
+  },
+];

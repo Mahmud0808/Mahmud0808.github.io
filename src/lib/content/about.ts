@@ -1,18 +1,24 @@
-import { AboutSectionType } from '@/lib/types/sections';
-import { getYearsSince } from '@/lib/utils/helper';
+import { Fact } from '@/lib/types';
 
-const years = getYearsSince(2022);
-const yearsWord = 'one two three four five six seven eight nine ten'.split(' ')[
-  years - 1
-];
-const yearsPhrase = yearsWord ? `over ${yearsWord} years` : `${years}+ years`;
-
-export const aboutSection: AboutSectionType = {
-  title: 'about me',
+export const about = {
   paragraphs: [
-    `I’m a software engineer from Dhaka with ${yearsPhrase} of experience in mobile development. Most of my work is native Android, built with Kotlin, Java and Jetpack Compose, and I also ship cross-platform apps with Flutter and React Native. I like working close to the platform, from system-level customization and AIDL to architecture that stays easy to maintain as a project grows. That approach has paid off: my apps are closing in on a million downloads.`,
-    'On the web I build full-stack products with Next.js, React and Node.js, handling everything from the interface down to APIs, authentication and data. I’m also fluent in modern AI tooling, from coding agents to CLI tools and LLM-powered workflows, and I know where it fits into serious engineering work and where it doesn’t.',
-    'Before any of that, I spent years in competitive programming and open source. Both stuck: I still maintain my own projects, contribute to others and take on contract work for long-term clients.',
+    'I’ve been building for mobile since 2022, mostly native Android in Kotlin, Java and Jetpack Compose. For cross-platform work I use Compose Multiplatform, plus Flutter and React Native when a project calls for them. I care about clean architecture that stays easy to maintain as an app grows.',
+    'On the web I build full-stack products with Next.js, React and Node.js, from the interface down to APIs, authentication and data. AI tooling (coding agents, CLI tools and LLM workflows) is part of my everyday engineering.',
+    'Before all of that came years of competitive programming and open source. I still maintain my own projects, contribute to other people’s, and take on contract work for long-term clients.',
   ],
-  img: '/images/mahmudul-hasan.webp',
+  facts: [
+    { label: 'App downloads', value: '1M+' },
+    { label: 'Building since', value: '2022' },
+    { label: 'Competitive programming problems', value: '1,000+' },
+    {
+      label: 'Time zone',
+      value: '+6',
+      abbr: { text: 'UTC', title: 'Coordinated Universal Time' },
+    },
+  ] as Fact[],
+};
+
+export const abbreviations: Record<string, string> = {
+  AIDL: 'Android Interface Definition Language',
+  RRO: 'Runtime Resource Overlay',
 };

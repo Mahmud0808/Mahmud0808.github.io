@@ -1,27 +1,19 @@
-import { Inter, Roboto_Mono } from 'next/font/google';
+import { Roboto_Flex } from 'next/font/google';
+import localFont from 'next/font/local';
 
-const inter = Inter({
-  variable: '--font-inter',
+const body = Roboto_Flex({
   subsets: ['latin'],
-  weight: [
-    '400', // Regular
-    '500', // Medium
-    '700', // Bold
-  ],
+  variable: '--font-body',
+  fallback: ['system-ui', 'sans-serif'],
 });
 
-const robotoMono = Roboto_Mono({
-  variable: '--font-roboto-mono',
-  subsets: ['latin'],
-  display: 'swap',
-  weight: [
-    '400', // Regular
-    '500', // Medium
-    '600', // Semibold
-    '700', // Bold
-  ],
+const signature = localFont({
+  src: '../../fonts/Agustina-Signature.woff2',
+  variable: '--font-signature',
+  preload: false,
+  fallback: ['Segoe Script', 'cursive'],
 });
 
-const fontVariables = `${inter.variable} ${robotoMono.variable}`;
+const fontVariables = `${body.variable} ${signature.variable}`;
 
 export default fontVariables;

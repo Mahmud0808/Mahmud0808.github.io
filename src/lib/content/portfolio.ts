@@ -1,61 +1,42 @@
-/*
- * =========================
- * AUTHOR INFO
- * =========================
- */
-
-import { StringKeyValueType } from '../types';
-
-export const socialLinks: StringKeyValueType = {
-  facebook: 'https://facebook.com/MHKhan08',
-  instagram: 'https://instagram.com/DrDisagree',
-  twitter: 'https://twitter.com/DrDisagree',
-  github: 'https://github.com/Mahmud0808',
-  linkedin: 'https://www.linkedin.com/in/mahmud0808',
-};
+import { SocialLink } from '@/lib/types';
 
 export const author = {
   name: 'Mahmudul Hasan Khan',
+  shortName: 'Mahmud',
   email: 'mhofficial2020@gmail.com',
+  jobTitle: 'Software Engineer',
+  city: 'Dhaka',
+  countryCode: 'BD',
 };
 
-export const seoData = {
+export const siteUrl = 'https://mahmud0808.github.io';
+
+export const seo = {
   title: 'Mahmudul Hasan Khan | Portfolio',
   description:
-    'Software engineer from Dhaka. Android apps with nearly a million downloads, plus full-stack web products built with Next.js, React and Node.js.',
-  author: author.name,
-  image: 'https://mahmud0808.github.io/images/og.png',
-  url: 'https://mahmud0808.github.io',
-  keywords: [
-    'Mahmud',
-    'Mahmudul',
-    'Mahmudul Hasan',
-    '@mahmudulhasan',
-    'mahmudulhasan',
-    'Mahmudul Hasan Khan',
-    '@mahmudulhasankhan',
-    'mahmudulhasankhan',
-    'Portfolio',
-    'Mahmudul Portfolio',
-    'Mahmudul Hasan Portfolio',
-    'Mahmudul Hasan Khan Portfolio',
-    'DrDisagree',
-    '@DrDisagree',
-    'DrDisagree Portfolio',
-    'Android Developer',
-    'Web Developer',
-    'Android Portfolio',
-    'Web Development Portfolio',
-    'Mobile App Developer',
-    'Software Engineer',
-    'Kotlin Developer',
-    'React Developer',
-    'Frontend Developer',
-    'Backend Developer',
-    'Full Stack Developer',
-    'Open Source Contributor',
-    'Multiplatform Developer',
-    'Cross Platform Developer',
-    'Compose Multiplatform Developer',
-  ],
+    'Mahmudul Hasan Khan (DrDisagree) is a software engineer in Dhaka building Android apps with over a million downloads and full-stack web products.',
+  alternateNames: ['Mahmud', 'DrDisagree', 'Mahmud0808'],
 };
+
+export const resume = {
+  file: '/resume.pdf',
+};
+
+export const socialLinks: SocialLink[] = [
+  { name: 'GitHub', href: 'https://github.com/Mahmud0808' },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/mahmud0808' },
+  { name: 'X (Twitter)', href: 'https://twitter.com/DrDisagree' },
+  { name: 'Instagram', href: 'https://instagram.com/DrDisagree' },
+  { name: 'Facebook', href: 'https://facebook.com/MHKhan08' },
+];
+
+export const navLinks = [
+  { name: 'About', id: 'about' },
+  { name: 'Experience', id: 'experience' },
+  { name: 'Work', id: 'work' },
+  { name: 'Contact', id: 'contact' },
+];
+
+export const fiverrProfile = 'https://www.fiverr.com/drdisagree';
+export const githubRepos = 'https://github.com/Mahmud0808?tab=repositories';
+export const sourceRepo = 'https://github.com/Mahmud0808/Mahmud0808.github.io';
