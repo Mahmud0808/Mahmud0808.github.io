@@ -1,6 +1,5 @@
-import Link from 'next/link';
-
 import { navLinks } from '@/lib/content/portfolio';
+import { prefix } from '@/lib/utils/config';
 
 import ThemeControls from '@/components/ThemeControls';
 
@@ -10,7 +9,7 @@ const Header = () => (
       <ul>
         {navLinks.map(({ name, id }) => (
           <li key={id}>
-            <Link href={`/#${id}`}>{name}</Link>
+            <a href={`${prefix}/#${id}`}>{name}</a>
           </li>
         ))}
       </ul>

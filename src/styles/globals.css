@@ -416,6 +416,10 @@ section {
   scroll-margin-top: 5rem;
 }
 
+.sections-ready .section {
+  content-visibility: visible;
+}
+
 .section {
   content-visibility: auto;
   contain-intrinsic-size: auto 900px;

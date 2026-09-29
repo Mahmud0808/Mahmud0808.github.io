@@ -7,6 +7,7 @@ import {
 } from '@/lib/content/portfolio';
 import { disciplines } from '@/lib/content/skills';
 
+import RenderSections from '@/components/RenderSections';
 import SectionNav from '@/components/SectionNav';
 import About from '@/containers/About';
 import Contact from '@/containers/Contact';
@@ -74,6 +75,7 @@ export default function Home() {
           __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
         }}
       />
+      <RenderSections />
       <SectionNav />
       <main id="main">
         <Hero />
