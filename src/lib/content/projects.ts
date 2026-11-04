@@ -2,6 +2,19 @@ import { Project } from '@/lib/types';
 
 export const projects: Project[] = [
   {
+    id: 'xmorph-clock',
+    name: 'XMorph Clock',
+    description:
+      'Xposed module that swaps the stock Pixel lockscreen clock for animated faces you build yourself. Digits morph every minute, and weather, widgets and photos can sit anywhere on the lockscreen.',
+    year: 2026,
+    img: '/images/projects/xmorph-clock.webp',
+    platform: 'mobile',
+    stack: ['Kotlin', 'Jetpack Compose', 'Xposed Framework', 'ML Kit'],
+    links: [
+      { kind: 'github', href: 'https://github.com/Mahmud0808/XMorphClock' },
+    ],
+  },
+  {
     id: 'teledrive',
     name: 'TeleDrive',
     description:
